@@ -1,35 +1,60 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// src/App.tsx
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <main className="container">
+      <header className="header">
+        <img className="logo" src="/logo.png" alt="ZoLu Recruitment" />
+        <h1>ZoLu Recruitment</h1>
+      </header>
 
-export default App
+      <section className="card hero">
+        <h2>Fast, affordable hiring for hospitality & retail</h2>
+        <p>
+          We help Western Sydney businesses hire reliable baristas, kitchenhands,
+          retail assistants and entry-level reception quickly and without the fuss.
+        </p>
+        <a
+          className="btn"
+          href="mailto:hello@zolurecruitment.com?subject=Hire%20with%20ZoLu"
+        >
+          Get in touch
+        </a>
+      </section>
+
+      <section className="row">
+        <article className="card plan">
+          <h3>Basic — $600</h3>
+          <ul>
+            <li>1–2 candidates</li>
+            <li>Basic screening</li>
+            <li>7-day replacement guarantee</li>
+          </ul>
+        </article>
+
+        <article className="card plan">
+          <h3>Standard — $750</h3>
+          <ul>
+            <li>3 candidates</li>
+            <li>Phone screening + shortlisting</li>
+            <li>14-day replacement guarantee</li>
+          </ul>
+        </article>
+
+        <article className="card plan">
+          <h3>Pro — $1,000</h3>
+          <ul>
+            <li>3–5 candidates</li>
+            <li>Screening + interview support</li>
+            <li>30-day replacement guarantee</li>
+          </ul>
+        </article>
+      </section>
+
+      <footer className="footer">
+        © {new Date().getFullYear()} ZoLu Recruitment • Western Sydney
+      </footer>
+    </main>
+  );
+}
