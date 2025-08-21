@@ -18,3 +18,25 @@ export default function About(){
     </section>
   );
 }
+      {/* Why ZoLu */}
+      <section className="section">
+        <div className="kicker">Why ZoLu</div>
+        <div className="row" style={{marginTop:12}}>
+          <div className="card col">
+            <h3>Fast & dependable</h3>
+            <ul>
+              <li>Shortlists typically within 3 business days</li>
+              <li>Daily comms while we’re searching</li>
+              <li>Replacement guarantees appropriate to the tier</li>
+            </ul>
+          </div>
+          <div className="card col">
+            <h3>Right-sized scope</h3>
+            <ul>
+              <li><strong>Starter / Standard / Pro</strong> for small businesses</li>
+              <li>Structured campaigns for upper-tier roles</li>
+              <li>Pricing aligned to our framework; fees confirmed in ToB</li>
+            </ul>
+          </div>
+        </div>
+      </section>
