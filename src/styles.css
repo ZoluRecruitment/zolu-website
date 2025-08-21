@@ -37,3 +37,7 @@ button:hover{filter:brightness(0.97)}
   .logo{height:40px}
   .brand h1{font-size:20px}
 }
+/* Sticky nav + service strip */
+.nav{position: sticky; top: 0; z-index: 40; border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--paper); backdrop-filter:saturate(1.1) blur(2px)}
+.strip{background:var(--paper); border-bottom:1px solid var(--border)}
+.strip .inner{max-width:1100px; margin:0 auto; padding:8px 24px; display:flex; gap:12px; align-items:center; justify-content:space-between; font-size:14px; color:#555}
