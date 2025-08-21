@@ -1,13 +1,17 @@
+import { useEffect } from "react";
+
 export default function About(){
+  useEffect(() => { document.title = "About — ZoLu Recruitment"; }, []);
+
   return (
     <section className="section">
       <div className="card">
         <h2>About Us</h2>
-        <p>ZoLu Recruitment (Amber Recruitment Pty Ltd) is Sydney‑based and services Greater Sydney and NSW as required.</p>
-        <p>We combine speed and clarity of scope with practical screening and dependable replacement guarantees. Our model supports both small local businesses and professional/managerial roles with structured delivery.</p>
+        <p><strong>ZoLu Recruitment</strong> (Amber Recruitment Pty Ltd) is Sydney-based and services Greater Sydney and NSW as required.</p>
+        <p>We combine speed and clear scope with dependable replacement guarantees. Our model supports both small local businesses and professional/managerial roles.</p>
         <ul>
-          <li>Clear scopes: Starter, Standard, Pro for budget‑friendly, entry‑level roles.</li>
-          <li>Structured campaigns for upper‑tier roles aligned to our framework.</li>
+          <li><strong>Starter / Standard / Pro</strong> — budget-friendly, fixed-scope packages for essential roles.</li>
+          <li><strong>Comprehensive campaigns</strong> — structured delivery for upper-tier roles aligned to our framework.</li>
           <li>Shortlists typically within 3 business days for most roles.</li>
         </ul>
       </div>
