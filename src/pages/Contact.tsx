@@ -1,4 +1,8 @@
+import { useEffect } from "react";
+
 export default function Contact(){
+  useEffect(() => { document.title = "Contact — ZoLu Recruitment"; }, []);
+
   return (
     <section className="section">
       <div className="card">
