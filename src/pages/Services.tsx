@@ -2,7 +2,7 @@ export default function Services(){
   return (
     <section className="section">
       <div className="card">
-        <h2>Offerings & Services</h2>
+        <h2>Services</h2>
         <p>Choose the track that fits your needs and role complexity.</p>
 
         <h3 style={{marginTop:16}}>A) Small‑Business Fixed‑Price Packages</h3>
