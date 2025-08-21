@@ -13,6 +13,20 @@ export default function Home() {
 
       <section className="section">
         <div className="kicker">Segments we serve</div>
+              {/* Testimonials */}
+      <section className="section">
+        <div className="kicker">What clients say</div>
+        <div className="row" style={{marginTop:12}}>
+          <blockquote className="card col">
+            <p>“ZoLu had three solid candidates in our inbox within two days. We hired by the end of the week.”</p>
+            <p style={{marginTop:8, color:"#555"}}>— Cafe Owner, Parramatta</p>
+          </blockquote>
+          <blockquote className="card col">
+            <p>“Clear process, no fluff. We filled a shift-manager role faster than our internal team.”</p>
+            <p style={{marginTop:8, color:"#555"}}>— QSR Franchisee, Western Sydney</p>
+          </blockquote>
+        </div>
+      </section>
 
         <div className="row" style={{ marginTop: 12 }}>
           <div className="card col">
