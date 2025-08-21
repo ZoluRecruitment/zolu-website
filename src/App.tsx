@@ -35,12 +35,11 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer className="footer">
-        <div className="inner">
-          <div>© {new Date().getFullYear()} ZoLu Recruitment — Amber Recruitment Pty Ltd</div>
-          <div className="address">Sydney NSW • hello@zolurecruitment.com</div>
-        </div>
-      </footer>
+  <footer className="footer">
+  <div className="inner">
+    <div>© {new Date().getFullYear()} ZoLu Recruitment — Amber Recruitment Pty Ltd</div>
+    <div className="address">
+      Sydney NSW • hello@zolurecruitment.com • <a href="/privacy">Privacy</a> • <a href="/terms">Terms</a>
     </div>
-  );
-}
+  </div>
+</footer>
