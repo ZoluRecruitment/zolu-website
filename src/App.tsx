@@ -42,6 +42,7 @@ export default function App() {
         </div>
       </footer>
 
-    </div>  {/* wrapper closes LAST */}
+      {/* wrapper closes LAST */}
+    </div>
   );
 }
