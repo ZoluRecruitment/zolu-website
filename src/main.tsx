@@ -6,8 +6,10 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
-import "./styles.css";
 import NotFound from "./pages/NotFound";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import "./styles.css";
 
 const router = createBrowserRouter([
   {
@@ -18,11 +20,14 @@ const router = createBrowserRouter([
       { path: "about", element: <About /> },
       { path: "services", element: <Services /> },
       { path: "contact", element: <Contact /> },
-      { path: "*", element: <NotFound /> } // <-- add this
+
+      { path: "privacy", element: <Privacy /> }, // <-- add here
+      { path: "terms", element: <Terms /> },     // <-- add here
+
+      { path: "*", element: <NotFound /> }       // keep this last
     ],
   },
 ]);
-
 
 createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
