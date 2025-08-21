@@ -10,11 +10,11 @@ export default function Contact(){
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    // Honeypot field to deter bots
+    // Honeypot (hidden) to deter bots
     if (data.get("company_website")) return;
 
     try {
-      const res = await fetch("https://formspree.io/f/https://formspree.io/f/myzpqvjo", {
+      const res = await fetch("https://formspree.io/f/myzpqvjo", {
         method: "POST",
         body: data,
         headers: { Accept: "application/json" },
