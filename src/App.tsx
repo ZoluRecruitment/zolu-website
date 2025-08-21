@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import Header from "./components/Header";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   return (
@@ -29,6 +30,8 @@ export default function App() {
 
       {/* Page content */}
       <main className="content">
+        {/* <= this line is the whole point */}
+        <ScrollToTop />
         <div className="container">
           <Outlet />
         </div>
@@ -41,8 +44,6 @@ export default function App() {
           <div className="address">Sydney NSW • hello@zolurecruitment.com</div>
         </div>
       </footer>
-
-      {/* wrapper closes LAST */}
     </div>
   );
 }
