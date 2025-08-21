@@ -1,10 +1,10 @@
 export default function Header(){
   return (
     <header className="header">
-      <div className="brand">
+      <a className="brand" href="/" aria-label="ZoLu Recruitment — Home">
         <img className="logo" src="/logo.png" alt="ZoLu Recruitment" />
         <h1>ZoLu Recruitment</h1>
-      </div>
+      </a>
       <a className="cta" href="/contact">Work with us</a>
     </header>
   );
