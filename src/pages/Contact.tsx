@@ -8,9 +8,9 @@ export default function Contact(){
   useEffect(() => { document.title = "Contact — ZoLu Recruitment"; }, []);
   const [status, setStatus] = useState<"idle"|"sending"|"sent"|"error">("idle");
 
-  // Robust GA sender (retries for up to 5s if gtag isn't ready yet)
-  const tried = useRef(0);
-  function sendLeadEvent() {
+  // Retry-sender: if gtag isn't ready yet, try for up to ~5s
+  const tries = useRef(0);
+  function sendLead() {
     if (window.gtag) {
       window.gtag("event", "lead", {
         page_location: location.href,
@@ -18,20 +18,20 @@ export default function Contact(){
         page_title: document.title
       });
       console.log("[GA] lead event sent");
-    } else if (tried.current < 10) {
-      tried.current += 1;
-      setTimeout(sendLeadEvent, 500);
+    } else if (tries.current < 10) {
+      tries.current += 1;
+      setTimeout(sendLead, 500);
     } else {
-      console.warn("[GA] lead NOT sent (gtag not available)");
+      console.warn("[GA] lead NOT sent (gtag unavailable)");
     }
   }
 
-  // Backup: when the thank-you screen mounts, send the event once
+  // Safety net: if the thank-you view shows, send once
   const firedOnce = useRef(false);
   useEffect(() => {
     if (status === "sent" && !firedOnce.current) {
       firedOnce.current = true;
-      sendLeadEvent();
+      sendLead();
     }
   }, [status]);
 
@@ -54,7 +54,7 @@ export default function Contact(){
       if (res.ok) {
         form.reset();
         // Fire GA immediately on success
-        sendLeadEvent();
+        sendLead();
         setStatus("sent");
       } else {
         setStatus("error");
@@ -69,7 +69,10 @@ export default function Contact(){
       <section className="section">
         <div className="card">
           <h2>Thanks — we’ve got it</h2>
-          <p>We’ll reply shortly. If it’s urgent, email <a href="mailto:hello@zolurecruitment.com">hello@zolurecruitment.com</a>.</p>
+          <p>
+            We’ll reply shortly. If it’s urgent, email{" "}
+            <a href="mailto:hello@zolurecruitment.com">hello@zolurecruitment.com</a>.
+          </p>
           <p><a className="cta" href="/">Back to Home</a></p>
         </div>
       </section>
