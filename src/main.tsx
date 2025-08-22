@@ -38,3 +38,38 @@ createRoot(document.getElementById("root")!).render(
     <RouterProvider router={router} />
   </React.StrictMode>
 );
+
+// =======================
+// Global CTA click tracking
+// Sends a GA event when any element with class="cta" or [data-track] is clicked.
+// =======================
+
+// Helper (tiny wrapper around gtag)
+function track(event: string, params: Record<string, any> = {}) {
+  // @ts-ignore - gtag is injected by index.html
+  if (typeof window !== "undefined" && (window as any).gtag) {
+    // @ts-ignore
+    (window as any).gtag("event", event, params);
+  }
+}
+
+// Event delegation on the whole document so it works for any page
+document.addEventListener("click", (e) => {
+  const target = e.target as HTMLElement | null;
+  if (!target) return;
+
+  const el = target.closest("[data-track], .cta") as HTMLElement | null;
+  if (!el) return;
+
+  const eventName = el.getAttribute("data-track") || "cta_click";
+  const label =
+    el.getAttribute("data-label") ||
+    (el.textContent || "").trim().toLowerCase();
+
+  track(eventName, {
+    label,
+    page_location: location.href,
+    page_path: location.pathname,
+    page_title: document.title,
+  });
+});
