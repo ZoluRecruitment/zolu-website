@@ -1,8 +1,39 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+declare global {
+  interface Window { gtag?: (...args: any[]) => void }
+}
 
 export default function Contact(){
   useEffect(() => { document.title = "Contact — ZoLu Recruitment"; }, []);
   const [status, setStatus] = useState<"idle"|"sending"|"sent"|"error">("idle");
+
+  // Robust GA sender (retries for up to 5s if gtag isn't ready yet)
+  const tried = useRef(0);
+  function sendLeadEvent() {
+    if (window.gtag) {
+      window.gtag("event", "lead", {
+        page_location: location.href,
+        page_path: location.pathname,
+        page_title: document.title
+      });
+      console.log("[GA] lead event sent");
+    } else if (tried.current < 10) {
+      tried.current += 1;
+      setTimeout(sendLeadEvent, 500);
+    } else {
+      console.warn("[GA] lead NOT sent (gtag not available)");
+    }
+  }
+
+  // Backup: when the thank-you screen mounts, send the event once
+  const firedOnce = useRef(false);
+  useEffect(() => {
+    if (status === "sent" && !firedOnce.current) {
+      firedOnce.current = true;
+      sendLeadEvent();
+    }
+  }, [status]);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -11,7 +42,7 @@ export default function Contact(){
     const data = new FormData(form);
 
     // Honeypot (hidden) to deter bots
-    if (data.get("company_website")) return;
+    if (data.get("company_website")) { setStatus("idle"); return; }
 
     try {
       const res = await fetch("https://formspree.io/f/myzpqvjo", {
@@ -19,20 +50,12 @@ export default function Contact(){
         body: data,
         headers: { Accept: "application/json" },
       });
-      if (res.ok) {
-        setStatus("sent");
-        form.reset();
 
-        // ✅ GA conversion event — fires after successful submit
-        // (safe if gtag hasn't loaded yet)
-        // @ts-ignore - gtag is provided globally in index.html
-        window.gtag && window.gtag("event", "lead", {
-          page_location: location.href,
-          page_path: location.pathname,
-          page_title: document.title
-        });
-        // Optional: local breadcrumb while testing
-        console.log("[GA] lead event fired");
+      if (res.ok) {
+        form.reset();
+        // Fire GA immediately on success
+        sendLeadEvent();
+        setStatus("sent");
       } else {
         setStatus("error");
       }
