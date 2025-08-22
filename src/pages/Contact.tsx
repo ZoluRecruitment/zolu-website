@@ -23,14 +23,16 @@ export default function Contact(){
         setStatus("sent");
         form.reset();
 
-        // ---- GA conversion event (fires after successful submit) ----
-        // @ts-ignore - gtag is added globally in index.html
+        // ✅ GA conversion event — fires after successful submit
+        // (safe if gtag hasn't loaded yet)
+        // @ts-ignore - gtag is provided globally in index.html
         window.gtag && window.gtag("event", "lead", {
           page_location: location.href,
           page_path: location.pathname,
           page_title: document.title
         });
-        // -------------------------------------------------------------
+        // Optional: local breadcrumb while testing
+        console.log("[GA] lead event fired");
       } else {
         setStatus("error");
       }
