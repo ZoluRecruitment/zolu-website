@@ -46,21 +46,20 @@
     </script>
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z152CRC0QF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){ dataLayer.push(arguments); }
-  gtag('js', new Date());
-  /* temporary debug: shows events live in DebugView */
-  gtag('config', 'G-Z152CRC0QF', { anonymize_ip: true });
-
-</script>
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z152CRC0QF"></script>
+    <script>
+      // Only run GA when in production (Vite sets import.meta.env.PROD)
+      if (import.meta.env && import.meta.env.PROD) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-Z152CRC0QF', { anonymize_ip: true });
+      }
+    </script>
   </head>
 
   <body>
     <div id="root"></div>
-
     <!-- IMPORTANT: keep this src; Vite will swap it to hashed assets at build -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
