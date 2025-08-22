@@ -22,6 +22,15 @@ export default function Contact(){
       if (res.ok) {
         setStatus("sent");
         form.reset();
+
+        // ---- GA conversion event (fires after successful submit) ----
+        // @ts-ignore - gtag is added globally in index.html
+        window.gtag && window.gtag("event", "lead", {
+          page_location: location.href,
+          page_path: location.pathname,
+          page_title: document.title
+        });
+        // -------------------------------------------------------------
       } else {
         setStatus("error");
       }
