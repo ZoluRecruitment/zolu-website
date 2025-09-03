@@ -5,7 +5,9 @@ export default function Home() {
 
   // Smooth scrolling
   useEffect(() => {
-    const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]'));
+    const links = Array.from(
+      document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]')
+    );
     const onClick = (e: Event) => {
       const a = e.currentTarget as HTMLAnchorElement;
       const targetSel = a.getAttribute("href") || "";
@@ -22,7 +24,9 @@ export default function Home() {
 
   // Active nav highlighting
   useEffect(() => {
-    const navLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('nav a[href^="#"]'));
+    const navLinks = Array.from(
+      document.querySelectorAll<HTMLAnchorElement>('nav a[href^="#"]')
+    );
     function updateActiveNav() {
       const scrollPosition = window.scrollY + 100;
       navLinks.forEach((link) => {
@@ -33,12 +37,20 @@ export default function Home() {
         const bottom = top + section.offsetHeight;
         const isActive = scrollPosition >= top && scrollPosition < bottom;
 
-        link.classList.remove("border-b-2", "border-brown-900", "text-brown-900");
+        link.classList.remove(
+          "border-b-2",
+          "border-brown-900",
+          "text-brown-900"
+        );
         link.classList.add("text-brown-600");
 
         if (isActive) {
           link.classList.remove("text-brown-600");
-          link.classList.add("text-brown-900", "border-b-2", "border-brown-900");
+          link.classList.add(
+            "text-brown-900",
+            "border-b-2",
+            "border-brown-900"
+          );
         }
       });
     }
@@ -97,8 +109,18 @@ export default function Home() {
                 className="text-brown-900 hover:text-brown-800 p-2"
                 aria-label="Toggle menu"
               >
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 </svg>
               </button>
             </div>
@@ -106,7 +128,11 @@ export default function Home() {
         </div>
 
         {/* Mobile nav */}
-        <div className={`md:hidden ${mobileOpen ? "" : "hidden"} bg-white border-t border-warm-200`}>
+        <div
+          className={`md:hidden ${
+            mobileOpen ? "" : "hidden"
+          } bg-white border-t border-warm-200`}
+        >
           <div className="px-2 pt-2 pb-3 space-y-1">
             <a
               href="#home"
@@ -114,7 +140,27 @@ export default function Home() {
             >
               HOME
             </a>
-            <a href="#about" className="text-brown-600 hover:text-brown-900 block px-3 py-2 text-base font-medium">
+            <a
+              href="#about"
+              className="text-brown-600 hover:text-brown-900 block px-3 py-2 text-base font-medium"
+            >
               ABOUT
             </a>
-            <a href="#find-staff" className="text-brown-600 hover:text-brown-900 block px-3 py-2
+            <a
+              href="#find-staff"
+              className="text-brown-600 hover:text-brown-900 block px-3 py-2 text-base font-medium"
+            >
+              FIND STAFF
+            </a>
+            <a
+              href="#find-work"
+              className="text-brown-600 hover:text-brown-900 block px-3 py-2 text-base font-medium"
+            >
+              FIND WORK
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  );
+}
