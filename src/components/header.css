@@ -34,7 +34,7 @@
 .zolu-nav{
   display:flex;
   align-items:center;
-.zolu-nav{ gap:clamp(24px, 5vw, 72px); }
+  gap:clamp(36px, 8vw, 120px);
   margin-top:12px; /* a touch more to balance larger logo (optional) */
 }
 
