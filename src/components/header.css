@@ -23,9 +23,9 @@
 /* Brand (logo only) */
 .zolu-brand{ text-decoration:none; color:var(--zl-black); }
 
-/* 50% BIGGER LOGO (110px → 165px) */
+/* LOGO: 50% bigger (165px → 248px) */
 .zolu-brand__logo{
-  height:165px;
+  height:248px;
   width:auto;
   display:block;
 }
@@ -34,9 +34,9 @@
 .zolu-nav{
   display:flex;
   align-items:center;
-  /* 30% SMALLER GAP (36px/8vw/120px → 25px/5.6vw/84px) */
+  /* 30% smaller spacing between items */
   gap:clamp(25px, 5.6vw, 84px);
-  margin-top:12px;
+  margin-top:18px; /* nudge down to balance larger logo */
 }
 
 .zolu-nav__link{
@@ -45,7 +45,7 @@
   font-weight:400;
   letter-spacing:.08em;
   text-transform:uppercase;
-  /* already 50% smaller labels */
+  /* 50% smaller labels */
   font-size:clamp(10px, 1.2vw, 18px);
   line-height:1;
   padding:6px 0;
@@ -54,7 +54,7 @@
   -moz-osx-font-smoothing:grayscale;
 }
 
-/* ACTIVE PAGE ONLY is bold */
+/* Active page ONLY is bold */
 .zolu-nav__link.is-active{ font-weight:700; }
 
 .zolu-nav__link:hover,
@@ -69,12 +69,11 @@
     padding:28px 18px;
   }
 
-  /* 30% smaller mobile gap: 22px → ~15px */
-  .zolu-nav{ gap:15px; flex-wrap:wrap; margin-top:12px; }
+  /* keep tighter spacing on mobile */
+  .zolu-nav{ gap:15px; flex-wrap:wrap; margin-top:14px; }
 
-  /* 50% bigger on mobile too: 88px → 132px */
-  .zolu-brand__logo{ height:132px; }
+  /* LOGO mobile: 50% bigger (132px → 198px) */
+  .zolu-brand__logo{ height:198px; }
 
-  /* keep labels smaller on mobile */
   .zolu-nav__link{ font-size:clamp(8px, 2.25vw, 11px); }
 }
