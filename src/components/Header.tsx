@@ -3,14 +3,11 @@ import "./header.css";
 
 export default function Header() {
   return (
-    <header className="zolu-header">
-      <div className="zolu-header__inner">
-        {/* Left: Logo block */}
-        <a href="/" className="zolu-brand" aria-label="ZoLu Recruitment home">
-          {/* Replace with your actual logo file */}
-          <img src="/logo.png" alt="ZoLu" className="zolu-brand__logo" />
-          <span className="zolu-brand__sub">Recruitment</span>
-        </a>
+    <header>
+      <img src="/logo.png" alt="ZoLu Recruitment" />
+    </header>
+  );
+}
 
         {/* Right: Primary nav */}
         <nav className="zolu-nav" aria-label="Primary">
