@@ -1,0 +1,95 @@
+/* ===== Universal banner / header ===== */
+:root{
+  --zl-parchment:#f1efe7;
+  --zl-offwhite:#f6f4f0;
+  --zl-dark:#222222;
+  --zl-black:#000000;
+  --zl-mid:#cdcdcb;
+  --zl-white:#ffffff;
+}
+
+/* Inherit whatever font stack you already have loaded; we adjust weight/spacing only */
+.zolu-header{
+  background: var(--zl-parchment);
+  border-bottom: 1px solid var(--zl-mid);
+}
+
+.zolu-header__inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 26px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* Brand block (matches your screenshot: big logo, small spaced "Recruitment") */
+.zolu-brand{
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+  color: var(--zl-black);
+  gap: 10px;
+}
+
+.zolu-brand__logo{
+  /* Keep your original logo proportions; tweak height if needed */
+  height: 54px;           /* try 60–72 if you want it larger */
+  width: auto;
+  display: block;
+}
+
+.zolu-brand__sub{
+  letter-spacing: 0.28em; /* wide tracking like your image */
+  text-transform: none;   /* "Recruitment" in normal case */
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 400;
+  color: var(--zl-dark);
+}
+
+/* Primary nav (uppercase, wide tracking, clean) */
+.zolu-nav{
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 6vw, 56px);
+}
+
+.zolu-nav__link{
+  position: relative;
+  text-decoration: none;
+  color: var(--zl-black);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: clamp(14px, 1.8vw, 24px);
+  line-height: 1;
+  padding: 6px 0;
+  outline: none;
+}
+
+/* Active page emphasis (bold, like FIND WORK in your mock) */
+.zolu-nav__link.is-active{
+  font-weight: 700;
+}
+
+/* Subtle focus/hover without pills or underlines */
+.zolu-nav__link:hover,
+.zolu-nav__link:focus-visible{
+  opacity: 0.7;
+}
+
+/* Responsive: stack if very narrow */
+@media (max-width: 720px){
+  .zolu-header__inner{
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .zolu-nav{
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+}
