@@ -74,3 +74,51 @@ export default function Home() {
                 <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" />
                 </svg>
+              </div>
+              <h3 className="text-2xl font-semibold text-dark-gray mb-4">Quality First</h3>
+              <p className="text-dark-gray">
+                We prioritize quality over quantity, focusing on long-term relationships and sustainable career growth.
+              </p>
+            </div>
+
+            <div className="bg-cream p-8 rounded-2xl text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+              <div className="w-16 h-16 bg-dark-gray rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-semibold text-dark-gray mb-4">24/7 Support</h3>
+              <p className="text-dark-gray">
+                Our dedicated support team is always available to assist you throughout your journey with us.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-dark-gray py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold text-white mb-6">Ready to Get Started?</h2>
+          <p className="text-xl text-light-gray mb-8">
+            Join thousands of professionals and companies who trust us to make the right connections.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/services"
+              className="bg-white text-dark-gray px-8 py-4 rounded-lg font-semibold text-lg hover:bg-cream transition-all duration-300"
+            >
+              Post a Job
+            </a>
+            <a
+              href="/contact"
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-dark-gray transition-all duration-300"
+            >
+              Upload Resume
+            </a>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
