@@ -13,7 +13,7 @@
 .zolu-header__inner{
   max-width:1200px;
   margin:0 auto;
-  padding:34px 28px;              /* was 42px → 20% smaller */
+  padding:34px 28px;              /* 20% smaller than before */
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -21,21 +21,28 @@
 }
 
 /* Brand (logo only) */
-.zolu-brand{ text-decoration:none; color:var(--zl-black); }
+.zolu-brand{
+  text-decoration:none;
+  color:var(--zl-black);
+  flex:0 0 auto;                  /* don't let the brand grow/shrink */
+}
 
-/* Logo 20% smaller (was 248px) */
+/* Logo (20% smaller than 248px) */
 .zolu-brand__logo{
   height:198px;                   /* 248px × 0.8 */
   width:auto;
   display:block;
 }
 
-/* Nav */
+/* Nav — single row, never wraps */
 .zolu-nav{
   display:flex;
   align-items:center;
-  gap:clamp(25px, 5.6vw, 84px);   /* unchanged (horizontal spacing) */
-  margin-top:14px;                /* was 18px → ~20% smaller for balance */
+  justify-content:flex-end;
+  flex-wrap:nowrap;               /* <-- keep on one line */
+  gap:clamp(25px, 5.6vw, 84px);   /* your 30% tighter spacing */
+  margin-top:14px;                /* vertical alignment with the logo */
+  min-width:0;                    /* allow shrink if space is tight */
 }
 
 .zolu-nav__link{
@@ -47,7 +54,7 @@
   font-size:clamp(10px, 1.2vw, 18px);
   line-height:1;
   padding:6px 0;
-  white-space:nowrap;
+  white-space:nowrap;             /* prevent breaking onto two lines */
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
 }
@@ -60,17 +67,24 @@
 
 .nav, .strip { display:none !important; }
 
+/* Keep nav on one line across medium widths (shrink spacing + type slightly) */
+@media (max-width:1280px){
+  .zolu-nav{ gap:clamp(18px, 4.6vw, 64px); }
+  .zolu-nav__link{ font-size:clamp(9px, 1.05vw, 16px); }
+}
+
+@media (max-width:1080px){
+  .zolu-nav{ gap:clamp(14px, 3.8vw, 48px); }
+  .zolu-nav__link{ font-size:clamp(9px, 0.95vw, 14px); }
+}
+
 /* Mobile */
 @media (max-width:820px){
   .zolu-header__inner{
     flex-direction:column; align-items:flex-start;
-    padding:22px 18px;            /* was 28px → 20% smaller */
+    padding:22px 18px;            /* 20% smaller */
   }
-
-  .zolu-nav{ gap:15px; flex-wrap:wrap; margin-top:11px; } /* was 14px */
-
-  /* Mobile logo 20% smaller (was 198px) */
-  .zolu-brand__logo{ height:158px; }
-
+  .zolu-nav{ gap:15px; flex-wrap:wrap; margin-top:11px; }
+  .zolu-brand__logo{ height:158px; }  /* 20% smaller mobile logo */
   .zolu-nav__link{ font-size:clamp(8px, 2.25vw, 11px); }
 }
