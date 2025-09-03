@@ -10,7 +10,7 @@ export default function Header() {
           <img src="/Logo.png?v=2" alt="ZoLu" className="zolu-brand__logo" />
         </a>
 
-        {/* Right: Uppercase nav (active page becomes bold via .is-active) */}
+        {/* Right: Uppercase nav with new order */}
         <nav className="zolu-nav" aria-label="Primary">
           <NavLink
             to="/"
@@ -20,6 +20,15 @@ export default function Header() {
             }
           >
             HOME
+          </NavLink>
+
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              "zolu-nav__link" + (isActive ? " is-active" : "")
+            }
+          >
+            ABOUT
           </NavLink>
 
           <NavLink
@@ -38,15 +47,6 @@ export default function Header() {
             }
           >
             FIND WORK
-          </NavLink>
-
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              "zolu-nav__link" + (isActive ? " is-active" : "")
-            }
-          >
-            ABOUT
           </NavLink>
         </nav>
       </div>
