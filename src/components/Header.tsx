@@ -1,26 +1,38 @@
-export default function Header(){
-  return (
-    <header className="header">
-      {/* Logo → tracks as event "nav_click" with label "logo_home" */}
-      <a
-        className="brand"
-        href="/"
-        aria-label="ZoLu Recruitment — Home"
-        data-track="nav_click"
-        data-label="logo_home"
-      >
-        <img className="logo" src="/logo.png" alt="ZoLu Recruitment" />
-        <h1>ZoLu Recruitment</h1>
-      </a>
+import { NavLink } from "react-router-dom";
+import "./header.css";
 
-      {/* CTA → tracks as event "cta_click" with label "header_work_with_us" */}
-      <a
-        className="cta"
-        data-label="header_work_with_us"
-        href="/contact"
-      >
-        Work with us
-      </a>
+export default function Header() {
+  return (
+    <header className="zolu-header">
+      <div className="zolu-header__inner">
+        {/* Left: Logo block */}
+        <a href="/" className="zolu-brand" aria-label="ZoLu Recruitment home">
+          {/* Replace with your actual logo file */}
+          <img src="/logo.png" alt="ZoLu" className="zolu-brand__logo" />
+          <span className="zolu-brand__sub">Recruitment</span>
+        </a>
+
+        {/* Right: Primary nav */}
+        <nav className="zolu-nav" aria-label="Primary">
+          <NavLink to="/" end className="zolu-nav__link">
+            HOME
+          </NavLink>
+          <NavLink to="/services" className="zolu-nav__link">
+            FIND STAFF
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              `zolu-nav__link ${isActive ? "is-active" : ""}`
+            }
+          >
+            FIND WORK
+          </NavLink>
+          <NavLink to="/about" className="zolu-nav__link">
+            ABOUT
+          </NavLink>
+        </nav>
+      </div>
     </header>
   );
 }
