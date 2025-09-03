@@ -7,19 +7,16 @@ export default function Header() {
       <div className="zolu-header__inner">
         {/* Left: Logo */}
         <a href="/" className="zolu-brand" aria-label="ZoLu Recruitment home">
-          {/* Note the capital L in /Logo.png and cache-buster */}
           <img src="/Logo.png?v=2" alt="ZoLu" className="zolu-brand__logo" />
-          {/* Remove extra text below the logo to avoid duplicate “Recruitment” */}
-          {/* <span className="zolu-brand__sub">Recruitment</span> */}
         </a>
 
-        {/* Right: Uppercase nav */}
+        {/* Right: Uppercase nav (active page becomes bold via .is-active) */}
         <nav className="zolu-nav" aria-label="Primary">
           <NavLink
             to="/"
             end
             className={({ isActive }) =>
-              "zolu-nav__link" + (isActive ? "" : "")
+              "zolu-nav__link" + (isActive ? " is-active" : "")
             }
           >
             HOME
@@ -28,17 +25,16 @@ export default function Header() {
           <NavLink
             to="/services"
             className={({ isActive }) =>
-              "zolu-nav__link" + (isActive ? "" : "")
+              "zolu-nav__link" + (isActive ? " is-active" : "")
             }
           >
             FIND STAFF
           </NavLink>
 
-          {/* Bold permanently to match your mock */}
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              "zolu-nav__link is-strong" + (isActive ? "" : "")
+              "zolu-nav__link" + (isActive ? " is-active" : "")
             }
           >
             FIND WORK
@@ -47,7 +43,7 @@ export default function Header() {
           <NavLink
             to="/about"
             className={({ isActive }) =>
-              "zolu-nav__link" + (isActive ? "" : "")
+              "zolu-nav__link" + (isActive ? " is-active" : "")
             }
           >
             ABOUT
