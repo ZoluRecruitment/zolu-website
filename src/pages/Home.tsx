@@ -1,194 +1,76 @@
-import { useEffect, useState } from "react";
-
 export default function Home() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-
-  // Smooth scrolling
-  useEffect(() => {
-    const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]'));
-    const onClick = (e: Event) => {
-      const a = e.currentTarget as HTMLAnchorElement;
-      const targetSel = a.getAttribute("href") || "";
-      const target = document.querySelector(targetSel);
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
-        setMobileOpen(false);
-      }
-    };
-    links.forEach((l) => l.addEventListener("click", onClick));
-    return () => links.forEach((l) => l.removeEventListener("click", onClick));
-  }, []);
-
-  // Active nav highlighting
-  useEffect(() => {
-    const navLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('nav a[href^="#"]'));
-    function updateActiveNav() {
-      const scrollPosition = window.scrollY + 100;
-      navLinks.forEach((link) => {
-        const selector = link.getAttribute("href") || "";
-        const section = document.querySelector(selector) as HTMLElement | null;
-        if (!section) return;
-        const top = section.offsetTop;
-        const bottom = top + section.offsetHeight;
-        const isActive = scrollPosition >= top && scrollPosition < bottom;
-
-        link.classList.remove("border-b-2", "border-brown-900", "text-brown-900");
-        link.classList.add("text-brown-600");
-        if (isActive) {
-          link.classList.remove("text-brown-600");
-          link.classList.add("text-brown-900", "border-b-2", "border-brown-900");
-        }
-      });
-    }
-    updateActiveNav();
-    window.addEventListener("scroll", updateActiveNav);
-    return () => window.removeEventListener("scroll", updateActiveNav);
-  }, []);
-
   return (
-    <div className="bg-warm-50 text-brown-900">
-      {/* Navigation */}
-      <nav className="bg-white shadow-sm border-b border-warm-200">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <div className="bg-brown-900 text-white px-4 py-2 rounded-lg font-bold text-lg">LOGO</div>
-            </div>
-
-            {/* Desktop nav */}
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-8">
-                <a href="#home" className="text-brown-900 hover:text-brown-800 px-3 py-2 text-sm font-medium border-b-2 border-brown-900">HOME</a>
-                <a href="#about" className="text-brown-600 hover:text-brown-900 px-3 py-2 text-sm font-medium transition-colors">ABOUT</a>
-                <a href="#find-staff" className="text-brown-600 hover:text-brown-900 px-3 py-2 text-sm font-medium transition-colors">FIND STAFF</a>
-                <a href="#find-work" className="text-brown-600 hover:text-brown-900 px-3 py-2 text-sm font-medium transition-colors">FIND WORK</a>
+    <>
+      {/* Hero Section */}
+      <section className="hero-gradient min-h-screen flex items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-5xl lg:text-6xl font-bold text-dark-gray leading-tight mb-6">
+                Connect Talent with <span className="text-black">Opportunity</span>
+              </h1>
+              <p className="text-xl text-dark-gray mb-8 leading-relaxed">
+                We bridge the gap between exceptional professionals and forward-thinking companies.
+                Whether you're seeking top talent or your next career move, we make meaningful connections happen.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="/services"
+                  className="bg-gradient-to-br from-dark-gray to-black text-white px-8 py-4 rounded-lg font-semibold text-lg text-center transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
+                >
+                  Find Staff
+                </a>
+                <a
+                  href="/contact"
+                  className="border-2 border-dark-gray text-dark-gray px-8 py-4 rounded-lg font-semibold text-lg hover:bg-dark-gray hover:text-white transition-all duration-300 text-center"
+                >
+                  Find Work
+                </a>
               </div>
             </div>
 
-            {/* Mobile button */}
-            <div className="md:hidden">
-              <button
-                onClick={() => setMobileOpen((v) => !v)}
-                className="text-brown-900 hover:text-brown-800 p-2"
-                aria-label="Toggle menu"
-              >
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+            <div className="relative">
+              <div className="w-full h-96 bg-light-gray rounded-2xl flex items-center justify-center">
+                <svg
+                  className="w-32 h-32 text-dark-gray"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7V9C15 10.1 15.9 11 17 11V20C17 21.1 16.1 22 15 22H9C7.9 22 7 21.1 7 20V11C8.1 11 9 10.1 9 9V7H3V9C3 10.1 3.9 11 5 11V20C5 21.1 5.9 22 7 22H17C18.1 22 19 21.1 19 20V11C20.1 11 21 10.1 21 9Z" />
                 </svg>
-              </button>
+              </div>
             </div>
-          </div>
-        </div>
-
-        {/* Mobile nav */}
-        <div className={`md:hidden ${mobileOpen ? "" : "hidden"} bg-white border-t border-warm-200`}>
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            <a href="#home" className="text-brown-900 block px-3 py-2 text-base font-medium border-l-4 border-brown-900 bg-warm-100">HOME</a>
-            <a href="#about" className="text-brown-600 hover:text-brown-900 block px-3 py-2 text-base font-medium">ABOUT</a>
-            <a href="#find-staff" className="text-brown-600 hover:text-brown-900 block px-3 py-2 text-base font-medium">FIND STAFF</a>
-            <a href="#find-work" className="text-brown-600 hover:text-brown-900 block px-3 py-2 text-base font-medium">FIND WORK</a>
-          </div>
-        </div>
-      </nav>
-
-      {/* HERO */}
-      <section id="home" className="hero-gradient">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-          <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight">
-            Connecting Talent <br className="hidden sm:block" />
-            <span className="text-amber-500">With Opportunity</span>
-          </h1>
-          <p className="mt-4 max-w-2xl text-brown-800">
-            We bridge the gap between exceptional professionals and forward-thinking companies, creating partnerships that drive success for everyone.
-          </p>
-          <div className="mt-8 flex gap-3">
-            <a href="#find-staff" className="px-5 py-3 rounded-md bg-brown-900 text-white font-medium">Find Staff</a>
-            <a href="#find-work" className="px-5 py-3 rounded-md bg-amber-500 text-brown-900 font-medium">Find Work</a>
           </div>
         </div>
       </section>
 
-      {/* WHY CHOOSE US */}
-      <section id="about" className="py-14 sm:py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h2 className="text-center text-2xl sm:text-3xl font-bold">Why Choose Us</h2>
-          <p className="mt-2 text-center text-brown-700">
-            We make the connection process simple, efficient, and successful for both employers and job seekers.
-          </p>
+      {/* Features Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-dark-gray mb-4">Why Choose Us</h2>
+            <p className="text-xl text-dark-gray max-w-3xl mx-auto">
+              We understand that great matches create lasting success. Our approach combines industry
+              expertise with personalized service.
+            </p>
+          </div>
 
-          <div className="mt-10 grid sm:grid-cols-3 gap-6">
-            <div className="rounded-2xl bg-warm-100 p-6 shadow-sm">
-              <div className="text-2xl mb-3">⚙️</div>
-              <h3 className="font-semibold mb-1">Expert Matching</h3>
-              <p className="text-brown-700 text-sm">
-                Advanced matching connects the right talent with the right opportunities based on skills, culture, and goals.
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-cream p-8 rounded-2xl text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+              <div className="w-16 h-16 bg-dark-gray rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M16 6L18.29 8.29L13.41 13.17L9.41 9.17L2 16.59L3.41 18L9.41 12L13.41 16L20.29 9.12L22 10.83V6H16Z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-semibold text-dark-gray mb-4">Expert Matching</h3>
+              <p className="text-dark-gray">
+                Our experienced team uses advanced screening processes to ensure perfect fits between candidates and companies.
               </p>
             </div>
-            <div className="rounded-2xl bg-warm-100 p-6 shadow-sm">
-              <div className="text-2xl mb-3">⚡</div>
-              <h3 className="font-semibold mb-1">Fast Results</h3>
-              <p className="text-brown-700 text-sm">
-                Streamlined processes and dedicated support ensure quick turnarounds without compromising on quality.
-              </p>
-            </div>
-            <div className="rounded-2xl bg-warm-100 p-6 shadow-sm">
-              <div className="text-2xl mb-3">🎯</div>
-              <h3 className="font-semibold mb-1">Proven Success</h3>
-              <p className="text-brown-700 text-sm">
-                Thousands of successful placements and long-term partnerships demonstrate our commitment to excellence.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* DARK CTA BAND */}
-      <section className="bg-brown-900 text-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-20">
-          <h2 className="text-2xl sm:text-3xl font-semibold">Ready to Get Started?</h2>
-          <p className="mt-2 text-warm-200 max-w-2xl">
-            Whether you’re looking for top talent or your next career opportunity, we’re here to help you succeed.
-          </p>
-          <div className="mt-6 flex gap-3">
-            <a href="#find-staff" className="px-5 py-3 rounded-md bg-white text-brown-900 font-medium">Post a Job</a>
-            <a href="#find-work" className="px-5 py-3 rounded-md bg-amber-500 text-brown-900 font-medium">Browse Opportunities</a>
-          </div>
-        </div>
-      </section>
-
-      {/* FIND STAFF */}
-      <section id="find-staff" className="py-16 sm:py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl sm:text-3xl font-semibold">Find Staff</h2>
-          <p className="mt-2 text-brown-700 max-w-2xl">
-            Tell us what you need and we’ll shortlist quality candidates with clear scope and dependable replacement guarantees.
-          </p>
-          {/* Placeholder content – replace with your real form/sections */}
-          <div className="mt-6 rounded-xl border border-warm-200 p-6 bg-white">Your “Find Staff” content goes here.</div>
-        </div>
-      </section>
-
-      {/* FIND WORK */}
-      <section id="find-work" className="py-16 sm:py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl sm:text-3xl font-semibold">Find Work</h2>
-          <p className="mt-2 text-brown-700 max-w-2xl">
-            Browse open roles and apply in minutes. We’ll match you with teams that fit your skills and goals.
-          </p>
-          <div className="mt-6 rounded-xl border border-warm-200 p-6 bg-white">Your “Find Work” content goes here.</div>
-        </div>
-      </section>
-
-      {/* FOOTER */}
-      <footer className="border-t border-warm-200">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 text-sm text-brown-700 flex items-center justify-between">
-          <span>© {new Date().getFullYear()} ZoLu Recruitment — Amber Recruitment Pty Ltd</span>
-          <span className="inline-flex items-center gap-3">
-            Sydney NSW • <a className="underline underline-offset-2" href="mailto:hello@zolurecruitment.com">hello@zolurecruitment.com</a>
-          </span>
-        </div>
-      </footer>
-    </div>
-  );
-}
+            <div className="bg-light-cream p-8 rounded-2xl text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+              <div className="w-16 h-16 bg-dark-gray rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" />
+                </svg>
