@@ -54,32 +54,73 @@
       }
     </script>
 
-    <!-- Tailwind (CDN) + ZoLu warm palette -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          "brown-900": "#2c1810",
-          "brown-800": "#3c2415",
-          "brown-600": "#8b4513",
-          "amber-400": "#d4a574",
-          "amber-500": "#c49660",
-          "warm-50":  "#faf8f5",
-          "warm-100": "#f5f1eb",
-          "warm-200": "#e8ddd0",
-        },
-      },
-    },
-  };
-</script>
-<style>
-  .hero-gradient {
-    background: linear-gradient(135deg, #faf8f5 0%, #f5f1eb 100%);
-  }
-</style>
+    <!-- Tailwind (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              /* Your design's palette */
+              cream: "#f1efe7",
+              "light-cream": "#f6f4f0",
+              "dark-gray": "#222222",
+              "light-gray": "#cdcdcb",
 
+              /* Keep your existing warm palette too (if used elsewhere) */
+              "brown-900": "#2c1810",
+              "brown-800": "#3c2415",
+              "brown-600": "#8b4513",
+              "amber-400": "#d4a574",
+              "amber-500": "#c49660",
+              "warm-50": "#faf8f5",
+              "warm-100": "#f5f1eb",
+              "warm-200": "#e8ddd0"
+            }
+          }
+        }
+      };
+    </script>
+
+    <!-- Inter font + helper styles (match your HTML design) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      body { font-family: "Inter", sans-serif; }
+
+      /* Gradient used in the Hero section */
+      .hero-gradient {
+        background: linear-gradient(135deg, #f1efe7 0%, #f6f4f0 100%);
+      }
+
+      /* Link underline hover used in your sample nav (safe to keep globally) */
+      .nav-link { position: relative; transition: all 0.3s ease; }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0; height: 2px; bottom: -4px; left: 50%;
+        background-color: #222222; transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+      .nav-link:hover::after { width: 100%; }
+
+      /* Card hover lift */
+      .card-hover { transition: all 0.3s ease; }
+      .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+
+      /* Dark gradient primary button */
+      .btn-primary {
+        background: linear-gradient(135deg, #222222 0%, #000000 100%);
+        transition: all 0.3s ease;
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      }
+
+      /* Optional: prevent tiny horizontal shift when pages differ in height */
+      html { scrollbar-gutter: stable; }
+      @supports not (scrollbar-gutter: stable) { html { overflow-y: scroll; } }
+    </style>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z152CRC0QF"></script>
@@ -87,9 +128,7 @@
       // Only run GA when in production (Vite sets import.meta.env.PROD)
       if (import.meta.env && import.meta.env.PROD) {
         window.dataLayer = window.dataLayer || [];
-        function gtag() {
-          dataLayer.push(arguments);
-        }
+        function gtag(){ dataLayer.push(arguments); }
         gtag("js", new Date());
         gtag("config", "G-Z152CRC0QF", { anonymize_ip: true });
       }
