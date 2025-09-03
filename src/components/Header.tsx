@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
-import logo from "../assets/logo.png";
-import "./header.css";                      // <-- IMPORTANT: pulls in the styles
+import "./header.css";
 
 export default function Header() {
   return (
@@ -8,7 +7,8 @@ export default function Header() {
       <div className="zolu-header__inner">
         {/* Left: Logo + small "Recruitment" */}
         <a href="/" className="zolu-brand" aria-label="ZoLu Recruitment home">
-          <img src={logo} alt="ZoLu" className="zolu-brand__logo" />
+          {/* Note the capital L and the cache-buster */}
+          <img src="/Logo.png?v=1" alt="ZoLu" className="zolu-brand__logo" />
           <span className="zolu-brand__sub">Recruitment</span>
         </a>
 
@@ -33,7 +33,7 @@ export default function Header() {
             FIND STAFF
           </NavLink>
 
-          {/* Bold this to mirror your screenshot emphasis */}
+          {/* Emphasis to match your screenshot */}
           <NavLink
             to="/contact"
             className={({ isActive }) =>
