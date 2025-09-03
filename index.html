@@ -5,13 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>ZoLu Recruitment — Sydney</title>
-    <meta name="description" content="Sydney-based recruitment. From affordable fixed-scope packages for small businesses to comprehensive upper-tier recruitment." />
+    <meta
+      name="description"
+      content="Sydney-based recruitment. From affordable fixed-scope packages for small businesses to comprehensive upper-tier recruitment."
+    />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="canonical" href="https://zolurecruitment.com/" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="ZoLu Recruitment — Sydney" />
-    <meta property="og:description" content="From affordable fixed-scope packages for small businesses to comprehensive upper-tier recruitment." />
+    <meta
+      property="og:description"
+      content="From affordable fixed-scope packages for small businesses to comprehensive upper-tier recruitment."
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://zolurecruitment.com/" />
     <meta property="og:image" content="https://zolurecruitment.com/og-image.png" />
@@ -22,7 +28,10 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="ZoLu Recruitment — Sydney" />
-    <meta name="twitter:description" content="From affordable fixed-scope packages for small businesses to comprehensive upper-tier recruitment." />
+    <meta
+      name="twitter:description"
+      content="From affordable fixed-scope packages for small businesses to comprehensive upper-tier recruitment."
+    />
     <meta name="twitter:image" content="https://zolurecruitment.com/og-image.png" />
 
     <!-- (Optional) Google Search Console verification -->
@@ -30,20 +39,42 @@
 
     <!-- Structured data -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "ZoLu Recruitment",
-      "url": "https://zolurecruitment.com/",
-      "logo": "https://zolurecruitment.com/favicon.png",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Sydney",
-        "addressRegion": "NSW",
-        "addressCountry": "AU"
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "ZoLu Recruitment",
+        "url": "https://zolurecruitment.com/",
+        "logo": "https://zolurecruitment.com/favicon.png",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Sydney",
+          "addressRegion": "NSW",
+          "addressCountry": "AU"
+        }
       }
-    }
     </script>
+
+    <!-- Tailwind (CDN) + brand colours -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cream: "#f1efe7",
+              "light-cream": "#f6f4f0",
+              "dark-gray": "#222222",
+              "light-gray": "#cdcdcb"
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      .hero-gradient {
+        background: linear-gradient(135deg, #f1efe7 0%, #f6f4f0 100%);
+      }
+    </style>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z152CRC0QF"></script>
@@ -51,9 +82,11 @@
       // Only run GA when in production (Vite sets import.meta.env.PROD)
       if (import.meta.env && import.meta.env.PROD) {
         window.dataLayer = window.dataLayer || [];
-        function gtag(){ dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-Z152CRC0QF', { anonymize_ip: true });
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "G-Z152CRC0QF", { anonymize_ip: true });
       }
     </script>
   </head>
