@@ -23,9 +23,9 @@
 /* Brand (logo only) */
 .zolu-brand{ text-decoration:none; color:var(--zl-black); }
 
-/* 50% BIGGER LOGO */
+/* 50% BIGGER LOGO (110px → 165px) */
 .zolu-brand__logo{
-  height:165px;   /* was 110px */
+  height:165px;
   width:auto;
   display:block;
 }
@@ -34,18 +34,19 @@
 .zolu-nav{
   display:flex;
   align-items:center;
-  gap:clamp(36px, 8vw, 120px);
-  margin-top:12px; /* a touch more to balance larger logo (optional) */
+  /* 30% SMALLER GAP (36px/8vw/120px → 25px/5.6vw/84px) */
+  gap:clamp(25px, 5.6vw, 84px);
+  margin-top:12px;
 }
 
-/* 50% SMALLER NAV LABELS */
 .zolu-nav__link{
   text-decoration:none !important;
   color:var(--zl-black) !important;
   font-weight:400;
   letter-spacing:.08em;
   text-transform:uppercase;
-  font-size:clamp(10px, 1.2vw, 18px);  /* was clamp(20px, 2.4vw, 36px) */
+  /* already 50% smaller labels */
+  font-size:clamp(10px, 1.2vw, 18px);
   line-height:1;
   padding:6px 0;
   white-space:nowrap;
@@ -68,11 +69,12 @@
     padding:28px 18px;
   }
 
-  .zolu-nav{ gap:22px; flex-wrap:wrap; margin-top:12px; }
+  /* 30% smaller mobile gap: 22px → ~15px */
+  .zolu-nav{ gap:15px; flex-wrap:wrap; margin-top:12px; }
 
-  /* 50% bigger on mobile too */
-  .zolu-brand__logo{ height:132px; }   /* was 88px */
+  /* 50% bigger on mobile too: 88px → 132px */
+  .zolu-brand__logo{ height:132px; }
 
-  /* 50% smaller on mobile too */
-  .zolu-nav__link{ font-size:clamp(8px, 2.25vw, 11px); } /* was clamp(16px, 4.5vw, 22px) */
+  /* keep labels smaller on mobile */
+  .zolu-nav__link{ font-size:clamp(8px, 2.25vw, 11px); }
 }
