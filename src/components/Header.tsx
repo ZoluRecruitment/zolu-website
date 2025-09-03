@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import logo from "../assets/zolu-logo.svg"; // <-- change to .png if that's your file
+import logo from "../assets/logo.png"; // <-- change to .png if that's your file
 
 export default function Header() {
   return (
