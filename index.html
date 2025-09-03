@@ -54,27 +54,32 @@
       }
     </script>
 
-    <!-- Tailwind (CDN) + brand colours -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              cream: "#f1efe7",
-              "light-cream": "#f6f4f0",
-              "dark-gray": "#222222",
-              "light-gray": "#cdcdcb"
-            }
-          }
-        }
-      };
-    </script>
-    <style>
-      .hero-gradient {
-        background: linear-gradient(135deg, #f1efe7 0%, #f6f4f0 100%);
-      }
-    </style>
+    <!-- Tailwind (CDN) + ZoLu warm palette -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          "brown-900": "#2c1810",
+          "brown-800": "#3c2415",
+          "brown-600": "#8b4513",
+          "amber-400": "#d4a574",
+          "amber-500": "#c49660",
+          "warm-50":  "#faf8f5",
+          "warm-100": "#f5f1eb",
+          "warm-200": "#e8ddd0",
+        },
+      },
+    },
+  };
+</script>
+<style>
+  .hero-gradient {
+    background: linear-gradient(135deg, #faf8f5 0%, #f5f1eb 100%);
+  }
+</style>
+
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z152CRC0QF"></script>
