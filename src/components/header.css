@@ -54,8 +54,8 @@
   -moz-osx-font-smoothing:grayscale;
 }
 
-.zolu-nav__link.is-strong{ font-weight:700; }
-.zolu-nav__link.is-active{ font-weight:400; }
+/* ACTIVE PAGE ONLY is bold */
+.zolu-nav__link.is-active{ font-weight:700; }
 
 .zolu-nav__link:hover,
 .zolu-nav__link:focus-visible{ opacity:.75; outline:none; }
