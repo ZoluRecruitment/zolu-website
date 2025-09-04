@@ -5,28 +5,32 @@
   border-bottom:1px solid rgba(0,0,0,.08);
 }
 
+/* Match max-w-7xl and px-4 / sm:px-6 / lg:px-8 */
 .topbar__inner{
-  max-width:1200px;
-  height:64px;
-  margin:0 auto;
-  /* tighter left padding so the name sits further left */
-  padding:0 16px 0 8px; /* was 0 20px */
+  max-width: 1280px;            /* 7xl */
+  margin: 0 auto;
+  height: 64px;
+  padding-left: 16px;           /* base: px-4 */
+  padding-right: 16px;
   display:flex;
   align-items:center;
   justify-content:space-between;
 }
-
-/* Brand: name only (no logo) */
-.brand{
-  display:flex; align-items:center; gap:0;
-  color:#111; text-decoration:none;
+@media (min-width: 640px){
+  .topbar__inner{ padding-left: 24px; padding-right: 24px; } /* sm:px-6 */
 }
+@media (min-width: 1024px){
+  .topbar__inner{ padding-left: 32px; padding-right: 32px; } /* lg:px-8 */
+}
+
+/* Brand: name only */
+.brand{ display:flex; align-items:center; gap:0; color:#111; text-decoration:none; }
 
 /* 50% bigger (18px → 27px) and bold */
 .brand__name{
-  font-size:27px;
-  font-weight:700;            /* was 600 */
-  letter-spacing:.01em;
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: .01em;
 }
 
 /* Tabs */
@@ -60,15 +64,11 @@
   will-change: transform;
 }
 .tab:hover::after,
-.tab:focus-visible::after{
-  transform: translateX(-50%) scaleX(1);
-}
+.tab:focus-visible::after{ transform: translateX(-50%) scaleX(1); }
 
 /* Active page: bold + solid underline */
 .tab.is-active{ font-weight:700; }
-.tab.is-active::after{
-  transform: translateX(-50%) scaleX(1);
-}
+.tab.is-active::after{ transform: translateX(-50%) scaleX(1); }
 
 /* Optional: avoid tiny horizontal jump between pages of different heights */
 html { scrollbar-gutter: stable; }
