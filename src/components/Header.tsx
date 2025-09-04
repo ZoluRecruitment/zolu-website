@@ -5,9 +5,8 @@ export default function Header() {
   return (
     <header className="topbar">
       <div className="topbar__inner">
-        {/* Left: logo + name */}
+        {/* Left: name only (logo removed) */}
         <a href="/" className="brand" aria-label="ZoLu Recruitment home">
-          <img src="/Logo.png?v=3" alt="ZoLu" className="brand__logo" />
           <span className="brand__name">ZoLu Recruitment</span>
         </a>
 
