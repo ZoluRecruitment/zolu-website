@@ -1,0 +1,25 @@
+/* src/pages/about.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body { font-family: 'Inter', sans-serif; }
+
+/* matches your gradient + keeps your existing class name */
+.hero-gradient {
+  background: linear-gradient(135deg, #f1efe7 0%, #f6f4f0 100%);
+}
+
+/* subtle hover/lift effect for cards */
+.card-hover { transition: all 0.3s ease; }
+.card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+
+/* simple timeline dots/line */
+.timeline-item { position: relative; padding-left: 2rem; }
+.timeline-item::before {
+  content: ''; position: absolute; left: 0; top: 0.5rem;
+  width: 12px; height: 12px; background-color: #222222; border-radius: 50%;
+}
+.timeline-item::after {
+  content: ''; position: absolute; left: 5px; top: 1.25rem;
+  width: 2px; height: calc(100% - 0.75rem); background-color: #cdcdcb;
+}
+.timeline-item:last-child::after { display: none; }
