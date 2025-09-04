@@ -40,7 +40,7 @@ export default function Home() {
 
             {/* IMAGE BOX — darker bg, no border/ring/shadow, logo fills box */}
             <div className="relative">
-              <div className="relative w-full h-96 rounded-2xl overflow-hidden bg-[#b3b0a6]">
+              <div className="relative w-full h-96 rounded-2xl overflow-hidden bg-[#adab9f]">
                 {imgOk ? (
                   <img
                     src="/Logo.png?v=3"
