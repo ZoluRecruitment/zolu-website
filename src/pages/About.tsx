@@ -129,23 +129,29 @@ export default function About() {
         </div>
       </section>
 
-      {/* Our Story */}
+            {/* Our Story */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
               <h2 className="text-4xl font-bold text-dark-gray mb-8">Our Story</h2>
               <p className="text-lg text-dark-gray mb-6 leading-relaxed">
-                Founded in 2020, ZoLu Recruitment emerged from a simple yet powerful belief: that the right
-                career match can change lives and transform businesses.
+                ZoLu Recruitment was created to give <strong>Sydney small businesses</strong>—especially in
+                hospitality and retail—a simple, affordable way to hire reliably. After years leading and
+                growing direct-sales and recruiting teams, <strong>Michael</strong> and <strong>Diana</strong> saw the same
+                problem again and again: owners needed great people, but didn’t want open-ended fees or vague scopes.
               </p>
               <p className="text-lg text-dark-gray mb-6 leading-relaxed">
-                Our founders, with over 20 years of combined experience in talent acquisition and human resources,
-                recognised the need for a more personalised, relationship-driven approach to recruitment.
+                We built ZoLu around clear, scope-based packages with transparent inclusions and a genuine
+                replacement guarantee, starting locally in Western Sydney and expanding across NSW. The focus is
+                practical: fast shortlists for <em>real roles</em> (baristas, kitchenhands, retail assistants,
+                entry-level reception) plus the option to add simple extras—like a basic website, social setup, or
+                menu optimisation—so new hires can actually help the business run better on day one.
               </p>
               <p className="text-lg text-dark-gray leading-relaxed">
-                Today, we&apos;ve successfully placed hundreds of professionals in roles where they thrive,
-                and helped countless companies build teams that drive their success forward.
+                Today we’re refining the model with transparent process, lean ops (React/Vercel stack, GA4
+                instrumentation), and tight feedback loops with owners. The goal is straightforward:
+                <strong> consistent, reliable hiring for Sydney businesses</strong>—without the fluff.
               </p>
             </div>
 
@@ -153,24 +159,34 @@ export default function About() {
               <h3 className="text-2xl font-bold text-dark-gray mb-8">Key Milestones</h3>
               <div className="space-y-8">
                 <div className="timeline-item">
-                  <h4 className="font-semibold text-dark-gray mb-2">2020 — Founded</h4>
-                  <p className="text-dark-gray">ZoLu Recruitment established with a vision to revolutionise talent acquisition.</p>
+                  <h4 className="font-semibold text-dark-gray mb-2">2025 — ZoLu Recruitment formed</h4>
+                  <p className="text-dark-gray">
+                    Trading as ZoLu Recruitment under Amber Recruitment Pty Ltd; initial focus on Western Sydney.
+                  </p>
                 </div>
                 <div className="timeline-item">
-                  <h4 className="font-semibold text-dark-gray mb-2">2021 — First 100 Placements</h4>
-                  <p className="text-dark-gray">Reached our first major milestone of successful candidate placements.</p>
+                  <h4 className="font-semibold text-dark-gray mb-2">Aug 2025 — Guarantees & packages defined</h4>
+                  <p className="text-dark-gray">
+                    Scope-based packages finalised with clear inclusions and <strong>7-, 14-, and 30-day</strong> replacement guarantees.
+                  </p>
                 </div>
                 <div className="timeline-item">
-                  <h4 className="font-semibold text-dark-gray mb-2">2022 — Team Expansion</h4>
-                  <p className="text-dark-gray">Grew our team to better serve clients across multiple industries.</p>
+                  <h4 className="font-semibold text-dark-gray mb-2">Aug 2025 — Website & analytics live</h4>
+                  <p className="text-dark-gray">
+                    React + Vite on Vercel; GA4 installed (ID <code>G-Z152CRC0QF</code>); contact form via Formspree with event tracking.
+                  </p>
                 </div>
                 <div className="timeline-item">
-                  <h4 className="font-semibold text-dark-gray mb-2">2023 — Technology Integration</h4>
-                  <p className="text-dark-gray">Implemented advanced matching algorithms and digital platforms.</p>
+                  <h4 className="font-semibold text-dark-gray mb-2">Sep 2025 — Sydney launch scope</h4>
+                  <p className="text-dark-gray">
+                    Rolling out affordable hiring for cafés, restaurants, and retail across Sydney & NSW; Xero Starter configured.
+                  </p>
                 </div>
                 <div className="timeline-item">
-                  <h4 className="font-semibold text-dark-gray mb-2">2024 — Continued Growth</h4>
-                  <p className="text-dark-gray">Expanding our reach while maintaining our commitment to quality.</p>
+                  <h4 className="font-semibold text-dark-gray mb-2">Planned — Phased expansion</h4>
+                  <p className="text-dark-gray">
+                    Grow service coverage across NSW, then expand to Melbourne once Sydney operations are humming.
+                  </p>
                 </div>
               </div>
             </div>
