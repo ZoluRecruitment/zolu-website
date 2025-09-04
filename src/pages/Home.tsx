@@ -14,6 +14,7 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* LEFT COLUMN — Text */}
             <div>
               <h1 className="text-5xl lg:text-6xl font-bold text-dark-gray leading-tight mb-6">
                 Connect Talent with <span className="text-black">Opportunity</span>
@@ -38,44 +39,23 @@ export default function Home() {
               </div>
             </div>
 
-            {/* IMAGE BOX — button-like with depth (shadow, ring, hover lift) */}
-            <div className="relative">
-              <a href="/about" className="group inline-block">
-                <div
-                  className="
-                    relative w-full h-96 rounded-2xl overflow-hidden
-                    bg-[#adab9f]
-                    shadow-lg ring-1 ring-black/10
-                    transition-all duration-300
-                    hover:shadow-2xl hover:-translate-y-0.5
-                    cursor-pointer
-                  "
-                  role="button"
-                  aria-label="ZoLu Recruitment"
-                >
-                  {/* subtle inner highlight so it feels like a ‘card/button’ */}
-                  <div className="pointer-events-none absolute inset-0 shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]" />
-
-                  {imgOk ? (
-                    <img
-                      src="/logo.png"  // served from /public/logo.png
-                      alt="ZoLu Recruitment Logo"
-                      className="absolute inset-0 w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-[1.01]"
-                      onError={() => setImgOk(false)}
-                      draggable={false}
-                    />
-                  ) : (
-                    <div className="absolute inset-0 bg-dark-gray flex items-center justify-center">
-                      <span className="text-white font-bold text-8xl">Z</span>
-                    </div>
-                  )}
-                </div>
-              </a>
+            {/* RIGHT COLUMN — Clean Logo */}
+            <div className="flex items-center justify-center h-full">
+              {imgOk ? (
+                <img
+                  src="/logo.png" // from /public/logo.png
+                  alt="ZoLu Recruitment Logo"
+                  className="max-h-[400px] w-auto object-contain"
+                  onError={() => setImgOk(false)}
+                  draggable={false}
+                />
+              ) : (
+                <div className="text-dark-gray font-bold text-6xl">ZoLu</div>
+              )}
             </div>
-            {/* /IMAGE BOX */}
-          </div> {/* closes grid */}
-        </div> {/* closes max-w container */}
-      </section> {/* closes Hero */}
+          </div>
+        </div>
+      </section>
 
       {/* Features */}
       <section className="py-12 bg-white">
