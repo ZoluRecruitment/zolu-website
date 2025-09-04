@@ -38,22 +38,24 @@ export default function Home() {
               </div>
             </div>
 
+            {/* IMAGE BOX — logo fills the grey box */}
             <div className="relative">
-              <div className="w-full h-96 bg-light-gray rounded-2xl overflow-hidden flex items-center justify-center">
+              <div className="relative w-full h-96 bg-light-gray rounded-2xl overflow-hidden">
                 {imgOk ? (
                   <img
                     src="/Logo.png?v=3"
                     alt="ZoLu Recruitment Logo"
-                    className="w-full h-full object-contain"
+                    className="absolute inset-0 w-full h-full object-cover"
                     onError={() => setImgOk(false)}
                   />
                 ) : (
-                  <div className="w-full h-full bg-dark-gray flex items-center justify-center">
+                  <div className="absolute inset-0 bg-dark-gray flex items-center justify-center">
                     <span className="text-white font-bold text-8xl">Z</span>
                   </div>
                 )}
               </div>
             </div>
+            {/* /IMAGE BOX */}
           </div>
         </div>
       </section>
