@@ -38,21 +38,39 @@ export default function Home() {
               </div>
             </div>
 
-            {/* IMAGE BOX — button-like with depth (shadow, ring, hover lift) */}
-            <div className="relative">
-              <a href="/about" className="group inline-block">
-                <div
-                  className="
-                    relative w-full h-96 rounded-2xl overflow-hidden
-                    bg-[#adab9f]
-                    shadow-lg ring-1 ring-black/10
-                    transition-all duration-300
-                    hover:shadow-2xl hover:-translate-y-0.5
-                    cursor-pointer
-                  "
-                  role="button"
-                  aria-label="ZoLu Recruitment"
-                >
+{/* IMAGE BOX — button-like with depth (shadow, ring, hover lift) */}
+<div className="relative">
+  <a href="/about" className="group inline-block">
+    <div
+      className="
+        relative w-full h-96 rounded-2xl overflow-hidden
+        bg-[#adab9f]
+        shadow-lg ring-1 ring-black/10
+        transition-all duration-300
+        hover:shadow-2xl hover:-translate-y-0.5
+        cursor-pointer
+      "
+      role="button"
+      aria-label="ZoLu Recruitment"
+    >
+      <div className="pointer-events-none absolute inset-0 shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]" />
+
+      {imgOk ? (
+        <img
+          src="/logo.png"     // ← EXACT name in /public
+          alt="ZoLu Recruitment Logo"
+          className="absolute inset-0 w-full h-full object-cover"
+          onError={() => setImgOk(false)}
+          draggable={false}
+        />
+      ) : (
+        <div className="absolute inset-0 bg-dark-gray flex items-center justify-center">
+          <span className="text-white font-bold text-8xl">Z</span>
+        </div>
+      )}
+    </div>
+  </a>
+</div>
                   {/* subtle inner highlight so it feels like a ‘card/button’ */}
                   <div className="pointer-events-none absolute inset-0 shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]" />
 
