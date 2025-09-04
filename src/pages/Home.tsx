@@ -58,7 +58,7 @@ export default function Home() {
 
                   {imgOk ? (
                     <img
-                      src="/Logo.png?v=3"   // keep your path
+                      src="/Logo.png?v=3"
                       alt="ZoLu Recruitment Logo"
                       className="absolute inset-0 w-full h-full object-cover"
                       onError={() => setImgOk(false)}
@@ -73,6 +73,9 @@ export default function Home() {
               </a>
             </div>
             {/* /IMAGE BOX */}
+          </div> {/* closes grid */}
+        </div>   {/* closes max-w container */}
+      </section>
 
       {/* Features */}
       <section className="py-12 bg-white">
