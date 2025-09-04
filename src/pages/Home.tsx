@@ -1,5 +1,6 @@
 // src/pages/Home.tsx
 import { useState } from "react";
+import Logo from "../assets/logo.png";
 
 export default function Home() {
   const [imgOk, setImgOk] = useState(true);
@@ -57,18 +58,19 @@ export default function Home() {
                   <div className="pointer-events-none absolute inset-0 shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]" />
 
                   {imgOk ? (
-                    <img
-                      src="/logo.png"   // ensure file exists at /public/logo.png (lowercase)
-                      alt="ZoLu Recruitment Logo"
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
-                      onError={() => setImgOk(false)}
-                      draggable={false}
-                    />
-                  ) : (
-                    <div className="absolute inset-0 bg-dark-gray flex items-center justify-center">
-                      <span className="text-white font-bold text-8xl">Z</span>
-                    </div>
-                  )}
+  <img
+    src={Logo}  // ← use the imported asset
+    alt="ZoLu Recruitment Logo"
+    className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
+    onError={() => setImgOk(false)}
+    draggable={false}
+  />
+) : (
+  <div className="absolute inset-0 bg-dark-gray flex items-center justify-center">
+    <span className="text-white font-bold text-8xl">Z</span>
+  </div>
+)}
+
                 </div>
               </a>
             </div>
