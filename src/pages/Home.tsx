@@ -60,7 +60,7 @@ export default function Home() {
                     <img
                       src="/logo.png"  // served from /public/logo.png
                       alt="ZoLu Recruitment Logo"
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
+                      className="absolute inset-0 w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-[1.01]"
                       onError={() => setImgOk(false)}
                       draggable={false}
                     />
