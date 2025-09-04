@@ -1,6 +1,5 @@
 // src/pages/Home.tsx
 import { useState } from "react";
-import Logo from "../assets/logo.png";
 
 export default function Home() {
   const [imgOk, setImgOk] = useState(true);
@@ -59,7 +58,7 @@ export default function Home() {
 
                   {imgOk ? (
                     <img
-                      src={Logo}
+                      src="/logo.png"  // served from /public/logo.png
                       alt="ZoLu Recruitment Logo"
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
                       onError={() => setImgOk(false)}
