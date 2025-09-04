@@ -10,7 +10,7 @@ export default function Home() {
       <section className="hero-gradient min-h-screen flex items-center relative overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute top-20 right-20 w-64 h-64 bg-white opacity-10 rounded-full" />
-        <div className="absolute bottom-20 left-20 w-32 h-32 bg-dark-gray opacity-5 rounded-full" />
+        {/* removed the faint grey circle that was showing under the buttons */}
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -39,18 +39,18 @@ export default function Home() {
               </div>
             </div>
 
-            {/* RIGHT — clean logo, cropped & 2x size */}
+            {/* RIGHT — clean logo, cropped & ~2× size */}
             <div className="flex items-center justify-center h-full">
               <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
                 {imgOk ? (
                   <img
-                    src="/logo.png"         /* file at public/logo.png */
+                    src="/logo.png"               // file in /public/logo.png
                     alt="ZoLu Recruitment Logo"
                     className="
                       absolute inset-0 w-full h-full
                       object-cover
-                      object-[center_28%]     /* keep focus higher; crops bottom (hides 'since 2025') */
-                      scale-[2]               /* ~2× size */
+                      object-[center_28%]       /* focus slightly high to hide 'since 2025' at bottom */
+                      scale-[2]                  /* ~2× enlarge the main wordmark */
                     "
                     onError={() => setImgOk(false)}
                     draggable={false}
@@ -102,7 +102,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="card-hover bg-cream p-8 rounded-2l text-center">
+            <div className="card-hover bg-cream p-8 rounded-2xl text-center">
               <div className="w-16 h-16 bg-dark-gray rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" />
