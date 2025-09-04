@@ -14,7 +14,7 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* LEFT COLUMN — Text */}
+            {/* LEFT — text */}
             <div>
               <h1 className="text-5xl lg:text-6xl font-bold text-dark-gray leading-tight mb-6">
                 Connect Talent with <span className="text-black">Opportunity</span>
@@ -39,20 +39,30 @@ export default function Home() {
               </div>
             </div>
 
-            {/* RIGHT COLUMN — Clean Logo */}
+            {/* RIGHT — clean logo, cropped & 2x size */}
             <div className="flex items-center justify-center h-full">
-              {imgOk ? (
-                <img
-                  src="/logo.png" // from /public/logo.png
-                  alt="ZoLu Recruitment Logo"
-                  className="max-h-[400px] w-auto object-contain"
-                  onError={() => setImgOk(false)}
-                  draggable={false}
-                />
-              ) : (
-                <div className="text-dark-gray font-bold text-6xl">ZoLu</div>
-              )}
+              <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
+                {imgOk ? (
+                  <img
+                    src="/logo.png"         /* file at public/logo.png */
+                    alt="ZoLu Recruitment Logo"
+                    className="
+                      absolute inset-0 w-full h-full
+                      object-cover
+                      object-[center_28%]     /* keep focus higher; crops bottom (hides 'since 2025') */
+                      scale-[2]               /* ~2× size */
+                    "
+                    onError={() => setImgOk(false)}
+                    draggable={false}
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center text-dark-gray font-bold text-6xl">
+                    ZoLu
+                  </div>
+                )}
+              </div>
             </div>
+            {/* /RIGHT */}
           </div>
         </div>
       </section>
@@ -92,7 +102,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="card-hover bg-cream p-8 rounded-2xl text-center">
+            <div className="card-hover bg-cream p-8 rounded-2l text-center">
               <div className="w-16 h-16 bg-dark-gray rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" />
