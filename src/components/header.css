@@ -1,9 +1,10 @@
-/* --- existing styles (keep yours) --- */
+/* Compact white banner */
 .topbar{
   position: sticky; top: 0; z-index: 50;
   background:#fff;
   border-bottom:1px solid rgba(0,0,0,.08);
 }
+
 .topbar__inner{
   max-width:1200px;
   height:64px;
@@ -13,56 +14,58 @@
   align-items:center;
   justify-content:space-between;
 }
-.brand{ display:flex; align-items:center; gap:10px; color:#111; text-decoration:none; }
-.brand__logo{ height:32px; width:auto; display:block; border-radius:8px; }
-.brand__name{ font-size:18px; font-weight:600; letter-spacing:.01em; }
+
+/* Brand: name only (no logo) */
+.brand{
+  display:flex; align-items:center; gap:0;
+  color:#111; text-decoration:none;
+}
+.brand__name{
+  font-size:18px; font-weight:600; letter-spacing:.01em;
+}
+
+/* Tabs */
 .tabs{ display:flex; align-items:center; gap:36px; }
 
-/* --- tabs with center-out underline --- */
 .tab{
-  position: relative;                 /* needed for ::after */
-  text-decoration: none;
+  position: relative;
+  text-decoration:none;
   color:#111;
   font-size:14px;
   font-weight:500;
   letter-spacing:.04em;
   text-transform:uppercase;
   line-height:1;
-  padding:6px 0;                      /* a little breathing room */
+  padding:6px 0;
   transition: color .2s ease;
 }
 
-/* the animated underline */
+/* Center-out underline on hover */
 .tab::after{
   content:"";
   position:absolute;
   left:50%;
-  bottom:-8px;                        /* sits just under the text */
+  bottom:-8px;
   height:2px;
   width:100%;
   background:#000;
-  transform: translateX(-50%) scaleX(0);   /* start invisible, center origin */
+  transform: translateX(-50%) scaleX(0);
   transform-origin: center;
-  transition: transform .22s ease;    /* center -> full */
+  transition: transform .22s ease;
   will-change: transform;
-  opacity: 1;                          /* solid color */
 }
-
-/* hover/focus: grow from the center */
 .tab:hover::after,
 .tab:focus-visible::after{
   transform: translateX(-50%) scaleX(1);
 }
 
-/* active page: keep line solid */
-.tab.is-active{
-  font-weight:700;                     /* your active bold */
-}
+/* Active page: bold + solid underline */
+.tab.is-active{ font-weight:700; }
 .tab.is-active::after{
   transform: translateX(-50%) scaleX(1);
 }
 
-/* Optional: prevent tiny horizontal jump when pages differ in height */
+/* Optional: avoid tiny horizontal jump between pages of different heights */
 html { scrollbar-gutter: stable; }
 @supports not (scrollbar-gutter: stable) { html { overflow-y: scroll; } }
 
