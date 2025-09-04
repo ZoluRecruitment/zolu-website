@@ -136,8 +136,8 @@ export default function About() {
             <div>
               <h2 className="text-4xl font-bold text-dark-gray mb-8">Our Story</h2>
               <p className="text-lg text-dark-gray mb-6 leading-relaxed">
-                ZoLu Recruitment was created to give <strong>Sydney small businesses</strong>—especially in
-                hospitality and retail—a simple, affordable way to hire reliably. After years leading and
+                ZoLu Recruitment was created to give <strong>Sydney small businesses</strong>
+                a simple, affordable way to hire reliably. After years leading and
                 growing direct-sales and recruiting teams, <strong>Michael</strong> and <strong>Diana</strong> saw the same
                 problem again and again: owners needed great people, but didn’t want open-ended fees or vague scopes.
               </p>
