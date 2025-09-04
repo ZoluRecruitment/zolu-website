@@ -46,16 +46,22 @@ export default function App() {
 
       {/* Footer */}
       <footer className="footer">
-        <div className="inner">
-          <div>© {new Date().getFullYear()} ZoLu Recruitment — Amber Recruitment Pty Ltd</div>
-          <div className="address">
-            Sydney NSW •{" "}
-            <a className="cta" data-label="footer_email" href="mailto:hello@zolurecruitment.com">
-              hello@zolurecruitment.com
-            </a>
-          </div>
-        </div>
-      </footer>
+  <div className="inner">
+    <div>
+      © {new Date().getFullYear()} ZoLu Recruitment — Amber Recruitment Pty Ltd
+    </div>
+    <div className="address">
+      Sydney NSW •{" "}
+      <a
+        className="cta"
+        data-label="footer_email"
+        href="mailto:admin@zolurecruitment.com"
+      >
+        admin@zolurecruitment.com
+      </a>
+    </div>
+  </div>
+</footer>
     </div>
   );
 }
