@@ -12,6 +12,10 @@ const Contact  = React.lazy(() => import("./pages/Contact"));
 const Privacy  = React.lazy(() => import("./pages/Privacy"));
 const Terms    = React.lazy(() => import("./pages/Terms"));
 const NotFound = React.lazy(() => import("./pages/NotFound"));
+// ----------------------
+// NEW: Find Staff page
+// ----------------------
+const FindStaff = React.lazy(() => import("./pages/FindStaff"));
 
 const Fallback = (
   <div className="container" style={{ padding: 24 }}>Loading…</div>
@@ -28,6 +32,10 @@ const router = createBrowserRouter([
       { path: "contact", element: <Suspense fallback={Fallback}><Contact /></Suspense> },
       { path: "privacy", element: <Suspense fallback={Fallback}><Privacy /></Suspense> },
       { path: "terms", element: <Suspense fallback={Fallback}><Terms /></Suspense> },
+      // --------------------------
+      // NEW: route for Find Staff
+      // --------------------------
+      { path: "find-staff", element: <Suspense fallback={Fallback}><FindStaff /></Suspense> },
       { path: "*", element: <Suspense fallback={Fallback}><NotFound /></Suspense> },
     ],
   },
