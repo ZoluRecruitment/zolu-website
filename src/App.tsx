@@ -21,22 +21,41 @@ export default function App() {
       {/* Sticky nav */}
       <nav className="nav">
         <div className="inner">
-          <NavLink to="/" end data-track="nav_click" data-label="home_nav" className={({ isActive }) => (isActive ? "active" : "")}>
+          <NavLink
+            to="/"
+            end
+            data-track="nav_click"
+            data-label="home_nav"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             Home
           </NavLink>
-          <NavLink to="/about" data-track="nav_click" data-label="about_nav" className={({ isActive }) => (isActive ? "active" : "")}>
+
+          <NavLink
+            to="/about"
+            data-track="nav_click"
+            data-label="about_nav"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             About
           </NavLink>
-          <NavLink to="/services" data-track="nav_click" data-label="services_nav" className={({ isActive }) => (isActive ? "active" : "")}>
-            Services
-          </NavLink>
 
-          {/* NEW: Find Staff */}
-          <NavLink to="/find-staff" data-track="nav_click" data-label="find_staff_nav" className={({ isActive }) => (isActive ? "active" : "")}>
+          {/* CHANGED: keep /services route, label it Find Staff */}
+          <NavLink
+            to="/services"
+            data-track="nav_click"
+            data-label="find_staff_nav"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             Find Staff
           </NavLink>
 
-          <NavLink to="/contact" data-track="nav_click" data-label="contact_nav" className={({ isActive }) => (isActive ? "active" : "")}>
+          <NavLink
+            to="/contact"
+            data-track="nav_click"
+            data-label="contact_nav"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             Contact
           </NavLink>
         </div>
