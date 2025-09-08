@@ -7,11 +7,7 @@ export default function Home() {
   return (
     <main>
       {/* Hero */}
-      <section className="hero-gradient min-h-screen flex items-center relative overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute top-20 right-20 w-64 h-64 bg-white opacity-10 rounded-full" />
-        {/* removed the faint grey circle that was showing under the buttons */}
-
+      <section className="hero-gradient min-h-screen flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* LEFT — text */}
@@ -21,7 +17,8 @@ export default function Home() {
               </h1>
               <p className="text-xl text-dark-gray mb-8 leading-relaxed">
                 We bridge the gap between exceptional professionals and forward-thinking companies.
-                Whether you're seeking top talent or your next career move, we make meaningful connections happen.
+                Whether you're seeking top talent or your next career move, we make meaningful
+                connections happen.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
@@ -39,30 +36,20 @@ export default function Home() {
               </div>
             </div>
 
-            {/* RIGHT — clean logo, cropped & ~2× size */}
-            <div className="flex items-center justify-center h-full">
-              <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
-                {imgOk ? (
-                  <img
-                    src="/logo.png"               // file in /public/logo.png
-                    alt="ZoLu Recruitment Logo"
-                    className="
-                      absolute inset-0 w-full h-full
-                      object-cover
-                      object-[center_28%]       /* focus slightly high to hide 'since 2025' at bottom */
-                      scale-[2]                  /* ~2× enlarge the main wordmark */
-                    "
-                    onError={() => setImgOk(false)}
-                    draggable={false}
-                  />
-                ) : (
-                  <div className="absolute inset-0 flex items-center justify-center text-dark-gray font-bold text-6xl">
-                    ZoLu
-                  </div>
-                )}
-              </div>
+            {/* RIGHT — clean logo */}
+            <div className="flex items-center justify-center">
+              {imgOk ? (
+                <img
+                  src="/logo.png" // make sure logo.png is in /public
+                  alt="ZoLu Recruitment Logo"
+                  className="w-full max-w-[480px] h-auto object-contain"
+                  onError={() => setImgOk(false)}
+                  draggable={false}
+                />
+              ) : (
+                <div className="text-dark-gray font-bold text-6xl">ZoLu</div>
+              )}
             </div>
-            {/* /RIGHT */}
           </div>
         </div>
       </section>
@@ -73,44 +60,63 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-dark-gray mb-4">Why Choose Us</h2>
             <p className="text-xl text-dark-gray max-w-3xl mx-auto">
-              We understand that great matches create lasting success. Our approach combines industry expertise with personalized service.
+              We understand that great matches create lasting success. Our approach combines
+              industry expertise with personalized service.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="card-hover bg-cream p-8 rounded-2xl text-center">
               <div className="w-16 h-16 bg-dark-gray rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
                   <path d="M16 6L18.29 8.29L13.41 13.17L9.41 9.17L2 16.59L3.41 18L9.41 12L13.41 16L20.29 9.12L22 10.83V6H16Z" />
                 </svg>
               </div>
               <h3 className="text-2xl font-semibold text-dark-gray mb-4">Expert Matching</h3>
               <p className="text-dark-gray">
-                Our experienced team uses advanced screening processes to ensure perfect fits between candidates and companies.
+                Our experienced team uses advanced screening processes to ensure perfect fits
+                between candidates and companies.
               </p>
             </div>
 
             <div className="card-hover bg-light-cream p-8 rounded-2xl text-center">
               <div className="w-16 h-16 bg-dark-gray rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
                   <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" />
                 </svg>
               </div>
               <h3 className="text-2xl font-semibold text-dark-gray mb-4">Quality First</h3>
               <p className="text-dark-gray">
-                We prioritize quality over quantity, focusing on long-term relationships and sustainable career growth.
+                We prioritize quality over quantity, focusing on long-term relationships and
+                sustainable career growth.
               </p>
             </div>
 
             <div className="card-hover bg-cream p-8 rounded-2xl text-center">
               <div className="w-16 h-16 bg-dark-gray rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
                   <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" />
                 </svg>
               </div>
               <h3 className="text-2xl font-semibold text-dark-gray mb-4">24/7 Support</h3>
               <p className="text-dark-gray">
-                Our dedicated support team is always available to assist you throughout your journey with us.
+                Our dedicated support team is always available to assist you throughout your journey
+                with us.
               </p>
             </div>
           </div>
@@ -122,7 +128,8 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Ready to Get Started?</h2>
           <p className="text-xl text-light-gray mb-8">
-            Join thousands of professionals and companies who trust us to make the right connections.
+            Join thousands of professionals and companies who trust us to make the right
+            connections.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
