@@ -97,7 +97,7 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-semibold text-dark-gray mb-4">Quality First</h3>
               <p className="text-dark-gray">
-                We prioritize quality over quantity, focusing on long-term relationships and
+                We prioritise quality over quantity, focusing on long-term relationships and
                 sustainable career growth.
               </p>
             </div>
