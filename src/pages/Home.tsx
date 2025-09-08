@@ -61,7 +61,7 @@ export default function Home() {
             <h2 className="text-4xl font-bold text-dark-gray mb-4">Why Choose Us</h2>
             <p className="text-xl text-dark-gray max-w-3xl mx-auto">
               We understand that great matches create lasting success. Our approach combines
-              industry expertise with personalized service.
+              industry expertise with personalised service.
             </p>
           </div>
 
