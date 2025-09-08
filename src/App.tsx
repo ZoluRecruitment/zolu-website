@@ -73,7 +73,7 @@ export default function App() {
       <footer className="footer">
         <div className="inner">
           <div>
-            © {new Date().getFullYear()} ZoLu Recruitment — Amber Recruitment Pty Ltd
+            © {new Date().getFullYear()} ZoLu Recruitment - Amber Recruitment Pty Ltd
           </div>
           <div className="address">
             Sydney NSW •{" "}
