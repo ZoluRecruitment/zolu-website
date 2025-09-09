@@ -140,7 +140,7 @@ export default function About() {
                 ZoLu Recruitment was founded by <strong>Diana Zola</strong> and <strong>Michael Luongo</strong>, combining extensive experience in sales leadership, recruitment, and business operations. Having worked side by side for many years, we built and managed high-performing teams that consistently delivered strong outcomes across Sydney.
               </p>
               <p className="text-lg text-dark-gray mb-6 leading-relaxed">
-                Through this work we developed deep expertise in recruitment, training, and workforce development, while seeing a recurring challenge for business owners: the need for reliable staff sourced quickly and effectively, without complexity.
+                Through this we a developed deep expertise in recruitment, training, and workforce development, while seeing a recurring challenge for business owners: the need for reliable staff sourced quickly and effectively, without complexity.
               </p>
               <p className="text-lg text-dark-gray mb-6 leading-relaxed">
                 We shifted our focus fully to recruitment, applying our proven ability to identify talent who not only interview well but also perform in the workplace. Today, ZoLu Recruitment delivers transparent, outcome-driven hiring solutions backed by defined scopes and replacement guarantees.
