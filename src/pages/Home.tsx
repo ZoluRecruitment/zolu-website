@@ -1,5 +1,6 @@
 // src/pages/Home.tsx
 import { useState } from "react";
+import Logo from "../assets/logo-clean.png";
 
 export default function Home() {
   const [imgOk, setImgOk] = useState(true);
