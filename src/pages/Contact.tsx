@@ -185,7 +185,110 @@ export default function Contact() {
 
   return (
     <main className="bg-white">
-      {/* Hero */}
+      {/* ================= TOP: Career Resources ================= */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-dark-gray mb-4">
+              Career Resources
+            </h2>
+            <p className="text-lg lg:text-xl text-dark-gray max-w-3xl mx-auto">
+              Simple tools to help you present well and interview with confidence.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Resume Tips */}
+            <div className="card-hover bg-cream p-8 rounded-2xl text-center">
+              <div className="w-16 h-16 bg-dark-gray rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-white text-2xl" aria-hidden>📄</span>
+              </div>
+              <h3 className="text-2xl font-semibold text-dark-gray mb-4">Resume Tips</h3>
+              <p className="text-dark-gray mb-6">
+                Use a clean layout with bullet points focused on outcomes (not duties).
+              </p>
+              <a
+                href="mailto:admin@zolurecruitment.com?subject=Resume%20review%20request"
+                className="w-full inline-block text-center bg-dark-gray text-white py-3 rounded-lg font-semibold hover:bg-black transition-colors"
+                data-track
+                data-label="resume_review_email"
+              >
+                Ask for a quick review
+              </a>
+            </div>
+
+            {/* Interview Tips */}
+            <div className="card-hover bg-light-cream p-8 rounded-2xl text-center">
+              <div className="w-16 h-16 bg-dark-gray rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-white text-2xl" aria-hidden>🎤</span>
+              </div>
+              <h3 className="text-2xl font-semibold text-dark-gray mb-4">Interview Tips</h3>
+              <p className="text-dark-gray mb-6">
+                Prepare one story per key skill (teamwork, problem solving, resilience).
+              </p>
+              <a
+                href="mailto:admin@zolurecruitment.com?subject=Mock%20interview%20request"
+                className="w-full inline-block text-center bg-dark-gray text-white py-3 rounded-lg font-semibold hover:bg-black transition-colors"
+                data-track
+                data-label="mock_interview_email"
+              >
+                Book a mock interview
+              </a>
+            </div>
+
+            {/* Salary Guide */}
+            <div className="card-hover bg-cream p-8 rounded-2xl text-center">
+              <div className="w-16 h-16 bg-dark-gray rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-white text-2xl" aria-hidden>💵</span>
+              </div>
+              <h3 className="text-2xl font-semibold text-dark-gray mb-4">Salary Guide</h3>
+              <p className="text-dark-gray mb-6">
+                Typical pay ranges for Sydney entry roles; we’ll advise case-by-case.
+              </p>
+              <a
+                href="mailto:admin@zolurecruitment.com?subject=Salary%20advice"
+                className="w-full inline-block text-center bg-dark-gray text-white py-3 rounded-lg font-semibold hover:bg-black transition-colors"
+                data-track
+                data-label="salary_advice_email"
+              >
+                Ask for advice
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= TOP: CTA band ================= */}
+      <section className="bg-dark-gray py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+            Ready to take the next step?
+          </h2>
+          <p className="text-lg lg:text-xl text-light-gray mb-8">
+            Send us your resume. We’ll get back to you within 48 hours.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              className="bg-white text-dark-gray px-8 py-4 rounded-lg font-semibold text-lg hover:bg-cream transition-all"
+              onClick={() => openApply()}
+              data-track
+              data-label="cta_upload_resume"
+            >
+              Upload Resume
+            </button>
+            <a
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-dark-gray transition-all"
+              href="mailto:admin@zolurecruitment.com?subject=Job%20alerts"
+              data-track
+              data-label="cta_job_alerts"
+            >
+              Get Job Alerts
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Hero (moved below the top blocks) ===== */}
       <section className="hero-gradient py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -366,105 +469,6 @@ export default function Contact() {
               onClick={() => openApply()}
             >
               Quick Apply
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Resources */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-dark-gray mb-4">Career Resources</h2>
-            <p className="text-lg lg:text-xl text-dark-gray max-w-3xl mx-auto">
-              Simple tools to help you present well and interview with confidence.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Resume Tips */}
-            <div className="card-hover bg-cream p-8 rounded-2xl text-center">
-              <div className="w-16 h-16 bg-dark-gray rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-white text-2xl" aria-hidden>📄</span>
-              </div>
-              <h3 className="text-2xl font-semibold text-dark-gray mb-4">Resume Tips</h3>
-              <p className="text-dark-gray mb-6">
-                Use a clean layout with bullet points focused on outcomes (not duties).
-              </p>
-              <a
-                href="mailto:admin@zolurecruitment.com?subject=Resume%20review%20request"
-                className="w-full inline-block text-center bg-dark-gray text-white py-3 rounded-lg font-semibold hover:bg-black transition-colors"
-                data-track
-                data-label="resume_review_email"
-              >
-                Ask for a quick review
-              </a>
-            </div>
-
-            {/* Interview Tips */}
-            <div className="card-hover bg-light-cream p-8 rounded-2xl text-center">
-              <div className="w-16 h-16 bg-dark-gray rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-white text-2xl" aria-hidden>🎤</span>
-              </div>
-              <h3 className="text-2xl font-semibold text-dark-gray mb-4">Interview Tips</h3>
-              <p className="text-dark-gray mb-6">
-                Prepare one story per key skill (teamwork, problem solving, resilience).
-              </p>
-              <a
-                href="mailto:admin@zolurecruitment.com?subject=Mock%20interview%20request"
-                className="w-full inline-block text-center bg-dark-gray text-white py-3 rounded-lg font-semibold hover:bg-black transition-colors"
-                data-track
-                data-label="mock_interview_email"
-              >
-                Book a mock interview
-              </a>
-            </div>
-
-            {/* Salary Guide */}
-            <div className="card-hover bg-cream p-8 rounded-2xl text-center">
-              <div className="w-16 h-16 bg-dark-gray rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-white text-2xl" aria-hidden>💵</span>
-              </div>
-              <h3 className="text-2xl font-semibold text-dark-gray mb-4">Salary Guide</h3>
-              <p className="text-dark-gray mb-6">
-                Typical pay ranges for Sydney entry roles; we’ll advise case-by-case.
-              </p>
-              <a
-                href="mailto:admin@zolurecruitment.com?subject=Salary%20advice"
-                className="w-full inline-block text-center bg-dark-gray text-white py-3 rounded-lg font-semibold hover:bg-black transition-colors"
-                data-track
-                data-label="salary_advice_email"
-              >
-                Ask for advice
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-dark-gray py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Ready to take the next step?</h2>
-          <p className="text-lg lg:text-xl text-light-gray mb-8">
-            Send us your resume. We’ll get back to you within 48 hours.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              className="bg-white text-dark-gray px-8 py-4 rounded-lg font-semibold text-lg hover:bg-cream transition-all"
-              onClick={() => openApply()}
-              data-track
-              data-label="cta_upload_resume"
-            >
-              Upload Resume
-            </button>
-            <a
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-dark-gray transition-all"
-              href="mailto:admin@zolurecruitment.com?subject=Job%20alerts"
-              data-track
-              data-label="cta_job_alerts"
-            >
-              Get Job Alerts
             </a>
           </div>
         </div>
