@@ -37,11 +37,11 @@ export default function Home() {
               </div>
             </div>
 
-            {/* RIGHT — clean logo */}
+            {/* RIGHT — clean logo (cropped + transparent PNG) */}
             <div className="flex items-center justify-center">
               {imgOk ? (
                 <img
-                  src="/logo.png" // make sure logo.png is in /public
+                  src={Logo}                 // <-- use the imported file
                   alt="ZoLu Recruitment Logo"
                   className="w-full max-w-[480px] h-auto object-contain"
                   onError={() => setImgOk(false)}
