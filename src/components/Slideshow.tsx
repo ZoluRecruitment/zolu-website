@@ -24,8 +24,10 @@ export default function Slideshow() {
   }, []);
 
   return (
-    <div className="flex justify-center">
-      <div className="relative overflow-hidden rounded-xl shadow-lg w-full max-w-md h-96">
+    <div className="flex justify-center items-start">
+      <div
+        className="relative overflow-hidden rounded-xl shadow-lg w-full max-w-lg h-[540px] mt-16"
+      >
         {slides.map((s, i) => (
           <img
             key={i}
