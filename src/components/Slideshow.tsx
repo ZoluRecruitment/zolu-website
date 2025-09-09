@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
-import Logo from "../assets/logo.png";
+// Updated to use logo-clean.png
+import Logo from "../assets/logo-clean.png";
 import Diana from "../assets/diana.png";
 import Michael from "../assets/michael.png";
 
