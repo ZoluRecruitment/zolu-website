@@ -1,6 +1,7 @@
 // src/pages/About.tsx
 import { useEffect } from "react";
 import "./about.css"; // step 2
+import Slideshow from "../components/Slideshow";
 
 export default function About() {
   // Smooth scrolling for any #anchors on this page (optional)
@@ -149,41 +150,8 @@ export default function About() {
               </p>
             </div>
 
-            <div className="bg-light-cream p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold text-dark-gray mb-8">Key Milestones</h3>
-              <div className="space-y-8">
-                <div className="timeline-item">
-                  <h4 className="font-semibold text-dark-gray mb-2">2025 — ZoLu Recruitment formed</h4>
-                  <p className="text-dark-gray">
-                    Trading as ZoLu Recruitment under Amber Recruitment Pty Ltd; initial focus on Western Sydney.
-                  </p>
-                </div>
-                <div className="timeline-item">
-                  <h4 className="font-semibold text-dark-gray mb-2">Aug 2025 — Guarantees & packages defined</h4>
-                  <p className="text-dark-gray">
-                    Scope-based packages finalised with clear inclusions and <strong>7-, 14-, and 30-day</strong> replacement guarantees.
-                  </p>
-                </div>
-                <div className="timeline-item">
-                  <h4 className="font-semibold text-dark-gray mb-2">Aug 2025 — Website & analytics live</h4>
-                  <p className="text-dark-gray">
-                    React + Vite on Vercel; GA4 installed (ID <code>G-Z152CRC0QF</code>); contact form via Formspree with event tracking.
-                  </p>
-                </div>
-                <div className="timeline-item">
-                  <h4 className="font-semibold text-dark-gray mb-2">Sep 2025 — Sydney launch scope</h4>
-                  <p className="text-dark-gray">
-                    Rolling out affordable hiring for cafés, restaurants, and retail across Sydney & NSW; Xero Starter configured.
-                  </p>
-                </div>
-                <div className="timeline-item">
-                  <h4 className="font-semibold text-dark-gray mb-2">Planned — Phased expansion</h4>
-                  <p className="text-dark-gray">
-                    Grow service coverage across NSW, then expand to Melbourne once Sydney operations are humming.
-                  </p>
-                </div>
-              </div>
-            </div>
+            {/* Slideshow replaces the Key Milestones card */}
+            <Slideshow />
           </div>
         </div>
       </section>
