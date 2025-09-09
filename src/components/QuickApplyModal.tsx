@@ -36,18 +36,39 @@ export default function QuickApplyModal({
       });
 
       if (!res.ok) {
-        const j = await res.json().catch(() => ({}));
-        throw new Error(j?.error || `Submit failed (${res.status})`);
+        // Try to read a useful message from the API
+        let msg = `Submit failed (${res.status})`;
+        try {
+          const ct = res.headers.get("content-type") || "";
+          if (ct.includes("application/json")) {
+            const j = await res.json();
+            if (typeof j?.error === "string") msg = j.error;
+            else if (typeof j?.message === "string") msg = j.message;
+          } else {
+            const t = await res.text();
+            if (t) msg = t;
+          }
+        } catch {
+          /* ignore parse errors */
+        }
+        throw new Error(msg);
       }
 
       setSuccess(true);
       form.reset();
+
       (window as any)?.gtag?.("event", "lead", {
         event_category: "form",
         event_label: job?.id || "quick-apply",
       });
-    } catch (err: any) {
-      setError(err?.message || "Something went wrong. Please try again.");
+    } catch (err: unknown) {
+      // Ensure we always render a string, not [object Object]
+      let msg = "Something went wrong. Please try again.";
+      if (typeof err === "string") msg = err;
+      else if (err && typeof err === "object" && "message" in err && typeof (err as any).message === "string") {
+        msg = (err as any).message;
+      }
+      setError(msg);
     } finally {
       setSubmitting(false);
     }
