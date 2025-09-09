@@ -28,11 +28,12 @@ export default function QuickApplyModal({
     data.append("job_id", job?.id || "quick-apply");
 
     try {
-      const res = await fetch("https://formspree.io/f/myzpqvjo", {
-        method: "POST",
-        body: data,                        // multipart/form-data (browser sets boundary)
-        headers: { Accept: "application/json" },
-      });
+      - const res = await fetch("https://formspree.io/f/myzpqvjo", {
++ const res = await fetch("/api/apply", {
+    method: "POST",
+    body: data,
+    headers: { Accept: "application/json" },
+  });
       if (!res.ok) {
         const j = await res.json().catch(() => ({}));
         throw new Error(j?.errors?.[0]?.message || `Submit failed (${res.status})`);
