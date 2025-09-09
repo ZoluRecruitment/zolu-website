@@ -136,16 +136,16 @@ export default function About() {
             <div>
               <h2 className="text-4xl font-bold text-dark-gray mb-8">Our Story</h2>
               <p className="text-lg text-dark-gray mb-6 leading-relaxed">
-                ZoLu Recruitment was founded through the professional partnership of <strong>Diana Zola</strong> and <strong>Michael Luongo</strong>. We combine extensive experience in sales leadership, recruitment, and business operations. Having worked side by side for many years in the direct sales industry, we built and managed high-performing teams that consistently delivered strong outcomes for clients and businesses across Sydney.
+                ZoLu Recruitment was founded by <strong>Diana Zola</strong> and <strong>Michael Luongo</strong>, combining extensive experience in sales leadership, recruitment, and business operations. Having worked side by side for many years, we built and managed high-performing teams that consistently delivered strong outcomes across Sydney.
               </p>
               <p className="text-lg text-dark-gray mb-6 leading-relaxed">
-                Through this work, we developed deep expertise in recruitment, training, and workforce development. Along the way, we saw the same challenge faced by business owners time and again: the need for dependable staff sourced quickly and effectively, without unnecessary complexity or uncertainty.
+                Through this work we developed deep expertise in recruitment, training, and workforce development, while seeing a recurring challenge for business owners: the need for reliable staff sourced quickly and effectively, without complexity.
               </p>
               <p className="text-lg text-dark-gray mb-6 leading-relaxed">
-                Recognising this gap, we shifted our focus fully to recruitment, applying our proven ability to identify talent who not only perform well in interviews but also deliver in the workplace. Today, through ZoLu Recruitment, we provide businesses with clear, transparent, and outcome-driven hiring solutions, supported by defined scopes and replacement guarantees.
+                We shifted our focus fully to recruitment, applying our proven ability to identify talent who not only interview well but also perform in the workplace. Today, ZoLu Recruitment delivers transparent, outcome-driven hiring solutions backed by defined scopes and replacement guarantees.
               </p>
               <p className="text-lg text-dark-gray leading-relaxed">
-                In partnership with <strong>Purple Patch Consulting</strong>, we are backed by best-in-class infrastructure, systems, and support — combining our personal expertise with enterprise-level capability. The result is a recruitment service positioned to deliver high-quality outcomes and long-term value for clients across Sydney and beyond.
+                Supported by best-in-class infrastructure and systems, we combine personal expertise with enterprise-level capability - providing a recruitment service designed to deliver lasting value for businesses across Sydney and beyond.
               </p>
             </div>
 
