@@ -1,3 +1,4 @@
+// src/components/QuickApplyModal.tsx
 import { useState } from "react";
 
 export type Job = {
@@ -28,16 +29,17 @@ export default function QuickApplyModal({
     data.append("job_id", job?.id || "quick-apply");
 
     try {
-      - const res = await fetch("https://formspree.io/f/myzpqvjo", {
-+ const res = await fetch("/api/apply", {
-    method: "POST",
-    body: data,
-    headers: { Accept: "application/json" },
-  });
+      const res = await fetch("/api/apply", {
+        method: "POST",
+        body: data, // let browser set multipart boundary
+        headers: { Accept: "application/json" },
+      });
+
       if (!res.ok) {
         const j = await res.json().catch(() => ({}));
-        throw new Error(j?.errors?.[0]?.message || `Submit failed (${res.status})`);
+        throw new Error(j?.error || `Submit failed (${res.status})`);
       }
+
       setSuccess(true);
       form.reset();
       (window as any)?.gtag?.("event", "lead", {
@@ -59,7 +61,9 @@ export default function QuickApplyModal({
             <h2 className="text-3xl font-bold text-dark-gray">
               {job ? `Apply for ${job.title}` : "Quick Apply"}
             </h2>
-            <button onClick={onClose} className="text-dark-gray hover:text-black" aria-label="Close">✕</button>
+            <button onClick={onClose} className="text-dark-gray hover:text-black" aria-label="Close">
+              ✕
+            </button>
           </div>
 
           <form onSubmit={onSubmit} encType="multipart/form-data" className="space-y-6">
