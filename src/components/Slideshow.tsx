@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-// Updated to use logo-clean.png
+// Assets
 import Logo from "../assets/logo-clean.png";
 import Diana from "../assets/diana.png";
 import Michael from "../assets/michael.png";
@@ -26,16 +26,15 @@ export default function Slideshow() {
 
   return (
     <div className="flex justify-center items-start">
-      <div
-        className="relative overflow-hidden rounded-xl shadow-lg w-full max-w-lg h-[540px] mt-16"
-      >
+      <div className="relative overflow-hidden rounded-xl shadow-lg w-full max-w-lg h-[540px] mt-16">
         {slides.map((s, i) => (
           <img
             key={i}
             src={s.src}
             alt={s.alt}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[3000ms] ease-in-out
-              ${i === index ? "opacity-100" : "opacity-0"}`}
+            className={`absolute inset-0 w-full h-full object-cover
+              transition-opacity duration-[4000ms] ease-linear
+              ${i === index ? "opacity-100 z-20" : "opacity-0 z-10"}`}
           />
         ))}
       </div>
