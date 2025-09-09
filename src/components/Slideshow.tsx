@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 
 // Put these files in src/assets/
 import Logo from "../assets/logo.png";
-import Diana from "../assets/diana.jpg";
-import Michael from "../assets/michael.jpg";
+import Diana from "../assets/diana.png";
+import Michael from "../assets/michael.png";
 
 type Slide = { src: string; alt: string };
 
