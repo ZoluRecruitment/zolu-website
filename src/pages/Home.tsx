@@ -37,20 +37,22 @@ export default function Home() {
               </div>
             </div>
 
-{/* RIGHT — clean logo (cropped + transparent PNG) */}
-<div className="flex items-center justify-center">
-  {imgOk ? (
-    <img
-      src={Logo} // <-- use the imported file
-      alt="ZoLu Recruitment Logo"
-      className="w-full max-w-[720px] h-auto object-contain"
-      onError={() => setImgOk(false)}
-      draggable={false}
-    />
-  ) : (
-    <div className="text-dark-gray font-bold text-6xl">ZoLu</div>
-  )}
-</div>
+            {/* RIGHT — clean logo (cropped + transparent PNG) */}
+            <div className="flex items-center justify-center">
+              {imgOk ? (
+                <img
+                  src={Logo} // imported file
+                  alt="ZoLu Recruitment Logo"
+                  className="w-full max-w-[720px] h-auto object-contain" // 50% bigger than 480px
+                  onError={() => setImgOk(false)}
+                  draggable={false}
+                />
+              ) : (
+                <div className="text-dark-gray font-bold text-6xl">ZoLu</div>
+              )}
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Features */}
